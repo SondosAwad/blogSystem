@@ -1,22 +1,25 @@
 import { UserService } from './../_services/user.service';
-import { User } from './../_models/user';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../_models/user';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-register',
-  templateUrl: './user-register.component.html',
-  styleUrls: ['./user-register.component.css']
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css']
 })
-export class UserRegisterComponent implements OnInit {
-  "newuser": User = new User(0, "", "");
+export class UserLoginComponent implements OnInit {
+  "olduser": User = new User(0, "", "");
+
   constructor(public userService: UserService, public router: Router) { }
-  register() {
-    this.userService.regist(this.newuser).subscribe(
+
+  login() {
+    this.userService.login(this.olduser).subscribe(
       a =>
         this.router.navigate(['/home']) //concatinate elments 
     )
   }
+
   ngOnInit(): void {
   }
 

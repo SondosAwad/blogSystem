@@ -11,5 +11,10 @@ export class UserService {
     return this.http.post<User>("https://yourcoolblogpost.herokuapp.com/users/register", user);
   }
 
+  login(user: User) {
+    return this.http.post<User>("https://yourcoolblogpost.herokuapp.com/users/login", user);
+  }
+
+
   constructor(public http: HttpClient) { }
 }

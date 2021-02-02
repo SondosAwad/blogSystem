@@ -1,3 +1,4 @@
+import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -9,6 +10,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   //user
   { path: 'users/register', component: UserRegisterComponent },
+  { path: 'users/login', component: UserLoginComponent },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent }
 
