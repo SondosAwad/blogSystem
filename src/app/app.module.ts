@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { FormsModule } from '@angular/forms';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { LoginComponent } from './login/login.component';
+import { TokenInterceptorService} from './_services/token-interceptor.service';
+import { UserBlogsComponent } from './user-blogs/user-blogs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     HomeComponent,
     NotfoundComponent,
     UserRegisterComponent,
-    UserLoginComponent
+    LoginComponent,
+    UserBlogsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,12 @@ import { UserLoginComponent } from './user-login/user-login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
