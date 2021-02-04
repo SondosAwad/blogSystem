@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
 
@@ -12,8 +13,11 @@ const routes: Routes = [
   //user
   { path: 'users/register', component: UserRegisterComponent },
   { path: 'users/login', component: LoginComponent },
+  //profile
+  { path: 'users/profile', component: ProfileComponent },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: 'myblogs', component: UserBlogsComponent},
+  { path: 'myblogs', component: UserBlogsComponent },
   { path: '**', component: NotfoundComponent }
 
 

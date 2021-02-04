@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptorService} from './_services/token-interceptor.service';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserBlogsComponent } from './user-blogs/user-blogs.component';
     NotfoundComponent,
     UserRegisterComponent,
     LoginComponent,
-    UserBlogsComponent
+    UserBlogsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

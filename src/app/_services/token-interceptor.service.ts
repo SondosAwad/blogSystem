@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { HttpInterceptor } from'@angular/common/http'; // interface
+import { HttpInterceptor } from '@angular/common/http'; // interface
 import { UserService } from '../_services/user.service';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(private injector: Injector) { }
 
-  intercept(req, next){
+  intercept(req, next) {
     let userService = this.injector.get(UserService)
     let tokenizedReq = req.clone({
       setHeaders: {

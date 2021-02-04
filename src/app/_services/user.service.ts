@@ -15,8 +15,12 @@ export class UserService {
     return this.http.post<User>("https://yourcoolblogpost.herokuapp.com/users/login", user);
   }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem('token');
+  }
+  //profile
+  profile(username: String) {
+    return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/profile" + username);
   }
 
 

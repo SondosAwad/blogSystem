@@ -12,13 +12,13 @@ export class LoginComponent implements OnInit {
 
   loggedUser: User = new User();
 
-  login(){
+  login() {
     this.userService.login(this.loggedUser).subscribe(
       user => {
         console.log(user);
         this.loggedUser = user;
         localStorage.setItem('token', user.token);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/users/profile']);
       }
     )
   }
