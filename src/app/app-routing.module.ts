@@ -6,8 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
 import { ProfileComponent } from './profile/profile.component';
+
 import { FollowComponent } from './follow/follow.component';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
+
+import { AddPostComponent } from './add-post/add-post.component';
+import { DetailblogComponent } from './detailblog/detailblog.component';
+
 
 const routes: Routes = [
 
@@ -17,11 +22,16 @@ const routes: Routes = [
   { path: 'users/login', component: LoginComponent },
   //profile
   { path: 'users/profile', component: ProfileComponent },
+
   //follow
   // { path: 'users/follow', component: FollowComponent },
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
 
+
+
+  { path: 'blogs', component: AddPostComponent },
+  { path: 'blogs/detail/:id', component: DetailblogComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'myblogs', component: UserBlogsComponent },
@@ -41,9 +51,7 @@ const routes: Routes = [
 
 
 
-// { path: 'students/details/:id', component: StudentdetailsComponent },
-// { path: 'students/edit/:id', component: EditstudentComponent },
-// { path: 'students/add', component: StudentaddComponent },
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

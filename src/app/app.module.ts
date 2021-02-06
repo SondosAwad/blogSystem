@@ -12,8 +12,12 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptorService } from './_services/token-interceptor.service';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
 import { ProfileComponent } from './profile/profile.component';
+
 import { FollowComponent } from './follow/follow.component';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
+
+import { AddPostComponent } from './add-post/add-post.component';
+import { DetailblogComponent } from './detailblog/detailblog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +27,13 @@ import { FollowProfileComponent } from './follow-profile/follow-profile.componen
     LoginComponent,
     UserBlogsComponent,
     ProfileComponent,
+
     FollowComponent,
     FollowProfileComponent,
 
+
+    AddPostComponent,
+    DetailblogComponent
   ],
   imports: [
     BrowserModule,
