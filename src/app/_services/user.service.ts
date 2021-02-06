@@ -1,3 +1,4 @@
+import { TokenInterceptorService } from './token-interceptor.service';
 import { User } from './../_models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -22,6 +23,14 @@ export class UserService {
   profile(username: String) {
     return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/profile" + username);
   }
+  //search by id 
+  searchbyid(id: number) {
+    return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/id" + id);
+  }
+  //follow
+  // follow(id: number, token: TokenInterceptorService) {
+  //   return this.http.patch("https://yourcoolblogpost.herokuapp.com/users/follow" + id, token);
+  // }
 
 
   constructor(public http: HttpClient) { }

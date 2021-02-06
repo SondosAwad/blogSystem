@@ -1,4 +1,8 @@
+import { User } from './../_models/user';
+import { UserService } from './../_services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  username!: String;
 
-  constructor() { }
 
+
+
+  constructor(private userService: UserService, private router: Router) { }
+
+  getName() {
+    this.username = localStorage.getItem("username");
+  }
   ngOnInit(): void {
+    this.getName();
   }
 
 }
+
+

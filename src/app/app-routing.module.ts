@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FollowComponent } from './follow/follow.component';
+import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 
 const routes: Routes = [
 
@@ -15,6 +17,11 @@ const routes: Routes = [
   { path: 'users/login', component: LoginComponent },
   //profile
   { path: 'users/profile', component: ProfileComponent },
+  //follow
+  // { path: 'users/follow', component: FollowComponent },
+  //search by id 
+  { path: 'users/id', component: FollowProfileComponent },
+
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'myblogs', component: UserBlogsComponent },

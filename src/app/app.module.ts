@@ -9,10 +9,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { TokenInterceptorService} from './_services/token-interceptor.service';
+import { TokenInterceptorService } from './_services/token-interceptor.service';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { FollowComponent } from './follow/follow.component';
+import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,10 @@ import { ProfileComponent } from './profile/profile.component';
     UserRegisterComponent,
     LoginComponent,
     UserBlogsComponent,
-    ProfileComponent
+    ProfileComponent,
+    FollowComponent,
+    FollowProfileComponent,
+
   ],
   imports: [
     BrowserModule,
