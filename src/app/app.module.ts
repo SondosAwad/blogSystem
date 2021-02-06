@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptorService} from './_services/token-interceptor.service';
 import { UserBlogsComponent } from './user-blogs/user-blogs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { DetailblogComponent } from './detailblog/detailblog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ProfileComponent } from './profile/profile.component';
     UserRegisterComponent,
     LoginComponent,
     UserBlogsComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddPostComponent,
+    DetailblogComponent
   ],
   imports: [
     BrowserModule,

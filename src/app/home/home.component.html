@@ -1,6 +1,57 @@
-<div class="container">
+
+ <a routerLink="/blogs" class="btn btn-danger">Add blog</a>
+<!-- <div class="container">
     <div id="blogs" *ngFor = "let blog of blogs">
         <h2>{{ blog.title }}</h2>
         <div>{{ blog.content }} <br/> {{ blog.author.username }} : {{ blog.postDate }}</div>
     </div>
+</div>  -->
+
+
+<section class="my-5">
+
+    <!-- Section heading -->
+ <div id="blogs" *ngFor = "let blog of blogs">
+    <!-- Grid row -->
+    <div class="row" >
+  
+      <!-- Grid column -->
+      <div class="col-lg-3">
+  
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+  
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-lg-3">
+  
+        <!-- Post title -->
+        <h3 class="font-weight-bold mb-3"><strong>{{ blog.title}}</strong></h3>
+        <!-- Excerpt -->
+        <p>{{blog.content}} </p>
+        <!-- Post data -->
+        <p>by <a><strong>{{ blog.author.username}}</strong></a>,{{ blog.postDate}}</p>
+        <!-- Read more button  -->
+         <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
+       
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
 </div>
+  </section>
+  <!-- Section: Blog v.1 -->
+  
+
+
+
+
+
