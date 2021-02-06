@@ -20,6 +20,9 @@ export class BlogService {
       observe:'events'
     });
   }
+  // addblog(blog:Blog){
+  //   return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",blog);
+  // }
 
   detailblog(id:number){
     return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/"+id)

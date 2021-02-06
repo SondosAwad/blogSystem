@@ -7,7 +7,44 @@
     </div>
 </div>  -->
 
+<div class="form-horizontal">
 
+
+    <div class="form-group"> 
+
+     <div class="form-group">
+        <label for="name" class="col-sm-3 control-label "> title</label>
+        <div class="col-sm-4">
+            <input [(ngModel)]="newblog.title" type="text" class="form-control" >
+         </div>
+    </div>
+
+    <div class="form-group">
+        <label for="age" class="col-sm-3 control-label "> content</label>
+        <div class="col-sm-4">
+            <textarea [(ngModel)]="newblog.content" class="form-control"></textarea>
+         </div>
+    </div>
+    <div class="form-group">
+        <label for="age" class="col-sm-3 control-label "> tags</label>
+        <div class="col-sm-4">
+            <textarea [(ngModel)]="newblog.tags" class="form-control"></textarea>
+         </div>
+    </div>
+    <!-- <div class="form-group">
+        <label for="age" class="col-sm-3 control-label "> upload file</label>
+        <div class="col-sm-4">
+            <input  class="form-control" type="file" (change)="onfileselected($event)">
+         </div>   
+      </div> -->
+    <div class="form-group" >
+        <div class="col-sm-7 col-sm-offset-4">
+            <button class="btn btn-primary" (click)="save()">post</button>
+        </div>
+    </div>
+
+</div>
+</div>
 <section class="my-5">
 
     <!-- Section heading -->
@@ -20,12 +57,12 @@
   
         <!-- Featured image -->
         <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
+          <img class="img-fluid" src= "https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
-  
+       <!-- // "https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" -->
       </div>
       <!-- Grid column -->
   
