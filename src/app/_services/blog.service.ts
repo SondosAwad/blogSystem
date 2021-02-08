@@ -14,15 +14,15 @@ export class BlogService {
   getUserBlogs(){
     return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com");
   }
-  addblog(fd:FormData){
+  addblogimg(fd:FormData){
     return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",fd,{
       reportProgress:true,
       observe:'events'
     });
   }
-  // addblog(blog:Blog){
-  //   return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",blog);
-  // }
+  addblog(blog:Blog){
+    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",blog);
+  }
 
   detailblog(id:number){
     return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/"+id)

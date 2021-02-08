@@ -1,4 +1,31 @@
-.div{
-    text-align: center;
+
+div{
+    margin-left: 8%;
+}
+
+h3,p{
+    margin-left: 25%;
+}
+
+h3{
+    text-shadow: 0 0 3px #FF0000;
+}
+.com1{
+    margin-left: 20%;
+}
+
+ input,button{
+     margin-right: 2%;
+ }
+ input{
+    margin-left: 2%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+     width: 35%;
+ }
+
+ input:focus {
+    outline:none;
     
 }

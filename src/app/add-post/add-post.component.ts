@@ -41,7 +41,7 @@ export class AddPostComponent implements OnInit {
         this.fd.append('content',this.newblog.content);
         
            
-    this.blogService.addblog(this.fd).subscribe(
+    this.blogService.addblogimg(this.fd).subscribe(
       a=>{
         console.log(a);
       

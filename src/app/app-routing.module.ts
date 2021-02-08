@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'users/profile', component: ProfileComponent },
 
   //follow
-  // { path: 'users/follow', component: FollowComponent },
+   { path: 'users/follow', component: FollowComponent },
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
 

@@ -1,15 +1,6 @@
 
  <a routerLink="/blogs" class="btn btn-danger">Add blog</a>
-<!-- <div class="container">
-    <div id="blogs" *ngFor = "let blog of blogs">
-        <h2>{{ blog.title }}</h2>
-        <div>{{ blog.content }} <br/> {{ blog.author.username }} : {{ blog.postDate }}</div>
-    </div>
-</div>  -->
-
-<div class="form-horizontal">
-
-
+<!-- <div class="form-horizontal">
     <div class="form-group"> 
 
      <div class="form-group">
@@ -31,12 +22,7 @@
             <textarea [(ngModel)]="newblog.tags" class="form-control"></textarea>
          </div>
     </div>
-    <!-- <div class="form-group">
-        <label for="age" class="col-sm-3 control-label "> upload file</label>
-        <div class="col-sm-4">
-            <input  class="form-control" type="file" (change)="onfileselected($event)">
-         </div>   
-      </div> -->
+    
     <div class="form-group" >
         <div class="col-sm-7 col-sm-offset-4">
             <button class="btn btn-primary" (click)="save()">post</button>
@@ -44,7 +30,38 @@
     </div>
 
 </div>
+</div> -->
+<div class="container">
+  <div class="row" id="row_style">
+      <h4 class="text-center"> new post</h4>
+      <div class="col-md-4   col-md-offset-4">
+          <div class="form-group">
+              <input [(ngModel)]="newblog.title" type="text" class="form-control" placeholder="Title">
+          </div>
+          <textarea  [(ngModel)]="newblog.content"  cols="30" rows="10">Submit your text post here...</textarea>
+          <br>
+          <div class="form-group">
+            <label for="age" class="control-label "> upload file</label>
+            <div>
+                <input  class="form-control" type="file" (change)="onfileselected($event)">
+             </div>   
+          </div>
+          <div class="form-group">
+              <input  type="text" class="form-control" placeholder="Tags">
+          </div>
+          <div class="form-group">
+              <button class="btn btn-primary" id="submit" (click)="save()">Submit new post</button>
+          </div>
+      </div>
+  </div>
 </div>
+
+
+
+
+
+
+
 <section class="my-5">
 
     <!-- Section heading -->
@@ -57,7 +74,7 @@
   
         <!-- Featured image -->
         <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
-          <img class="img-fluid" src= "https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
+          <img class="img-fluid" src= "{{blog.imgURL}}" alt="Sample image">
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>

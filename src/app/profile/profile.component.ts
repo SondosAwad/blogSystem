@@ -10,16 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  username!: String;
 
-
-
+  username: String=new String();
 
   constructor(private userService: UserService, private router: Router) { }
 
   getName() {
     this.username = localStorage.getItem("username");
   }
+
   ngOnInit(): void {
     this.getName();
   }
