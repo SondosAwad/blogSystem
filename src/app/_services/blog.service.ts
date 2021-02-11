@@ -12,7 +12,7 @@ export class BlogService {
   }
 
   getUserBlogs(){
-    return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com");
+    return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com/blogs");
   }
   addblogimg(fd:FormData){
     return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",fd,{
@@ -28,8 +28,20 @@ export class BlogService {
     return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/"+id)
   }
 
+
+
+
+
+
+
+
+  
   deleteblog(id:number){
     return this.http.delete("https://yourcoolblogpost.herokuapp.com/blogs/"+id);
   }
+  editblog(id:number,blog:Blog){
+    return this.http.patch("https://yourcoolblogpost.herokuapp.com/blogs/"+id,blog);
+  }
+  
   constructor(public http: HttpClient) { }
 }

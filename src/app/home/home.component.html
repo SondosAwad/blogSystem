@@ -1,37 +1,36 @@
 
- <a routerLink="/blogs" class="btn btn-danger">Add blog</a>
-<!-- <div class="form-horizontal">
-    <div class="form-group"> 
-
-     <div class="form-group">
-        <label for="name" class="col-sm-3 control-label "> title</label>
-        <div class="col-sm-4">
-            <input [(ngModel)]="newblog.title" type="text" class="form-control" >
-         </div>
-    </div>
-
-    <div class="form-group">
-        <label for="age" class="col-sm-3 control-label "> content</label>
-        <div class="col-sm-4">
-            <textarea [(ngModel)]="newblog.content" class="form-control"></textarea>
-         </div>
-    </div>
-    <div class="form-group">
-        <label for="age" class="col-sm-3 control-label "> tags</label>
-        <div class="col-sm-4">
-            <textarea [(ngModel)]="newblog.tags" class="form-control"></textarea>
-         </div>
-    </div>
-    
-    <div class="form-group" >
-        <div class="col-sm-7 col-sm-offset-4">
-            <button class="btn btn-primary" (click)="save()">post</button>
+ <!-- <a routerLink="/blogs" class="btn btn-danger">Add blog</a> -->
+ <div class="container">
+  <div class="row" id="row_style">
+ <div class="col-md-8 col-sm-12 pull-left posttimeline">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="status-upload nopaddingbtm">
+        <form>
+          <div class="form-group">
+            <input [(ngModel)]="newblog.title" type="text" class="form-control" placeholder="Title" [ngModelOptions]="{standalone: true}">
         </div>
+          <textarea [(ngModel)]="newblog.content" class="form-control" placeholder="What are you doing right now?" [ngModelOptions]="{standalone: true}"></textarea>
+          <br>
+          <ul class="nav nav-pills pull-left ">
+            <input class="glyphicon glyphicon-picture"  type="file" (change)="onfileselected($event)" data-original-title="Picture" [ngModelOptions]="{standalone: true}">
+        
+          </ul>
+          <button type="submit"  class="btn btn-success pull-right" (click)="save()"> Share</button>
+        </form>
+      </div>
+      <!-- Status Upload  --> 
     </div>
-
+  </div>
+ </div>
 </div>
-</div> -->
-<div class="container">
+</div>
+
+
+
+
+
+<!-- <div class="container">
   <div class="row" id="row_style">
       <h4 class="text-center"> new post</h4>
       <div class="col-md-4   col-md-offset-4">
@@ -54,7 +53,7 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -68,7 +67,6 @@
  <div id="blogs" *ngFor = "let blog of blogs">
     <!-- Grid row -->
     <div class="row" >
-  
       <!-- Grid column -->
       <div class="col-lg-3">
   

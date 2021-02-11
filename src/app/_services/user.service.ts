@@ -28,9 +28,13 @@ export class UserService {
     return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/id" + id);
   }
   //follow
-  // follow(id: number, token: TokenInterceptorService) {
-  //   return this.http.patch("https://yourcoolblogpost.herokuapp.com/users/follow" + id, token);
-  // }
+  follow(id: number,user: User) {
+    return this.http.patch("https://yourcoolblogpost.herokuapp.com/users/follow" + id,user);
+  }
+
+  getusers(){
+    return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/users");
+  }
 
 
   constructor(public http: HttpClient) { }
