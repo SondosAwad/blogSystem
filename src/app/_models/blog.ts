@@ -5,6 +5,7 @@ export class Blog {
         public postDate: Date,
         public _id:number,
         public imgURL:string,
-        public tags:string[]
+        public tags:string[],
+        public comments: number[]
         ) { }
 }
