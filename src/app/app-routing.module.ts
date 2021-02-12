@@ -1,3 +1,4 @@
+import { EditprofileComponent } from './editprofile/editprofile.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -24,9 +25,11 @@ const routes: Routes = [
   { path: 'users/profile', component: ProfileComponent },
 
   //follow
-   { path: 'users/follow', component: FollowComponent },
+  { path: 'users/follow', component: FollowComponent },
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
+  //edit profile
+  { path: 'users/editprofile', component: EditprofileComponent },
 
 
 

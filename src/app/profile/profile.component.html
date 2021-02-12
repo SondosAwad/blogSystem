@@ -61,6 +61,30 @@
               </div>
             </form>
             <!-- end of search box -->
+
+
+
+ <!-- settings -->
+
+ <div class="list-group">  
+  <a routerLink ='/users/editprofile' class="list-group-item">
+      <i  class="fa fa-asterisk"></i> Edit Profile
+      <i class="fa fa-chevron-right list-group-chevron"></i>
+  </a> 
+  <button (click)='deactivate()'class="list-group-item">  Deactivate my account 
+</button>
+
+      <!-- <i class="fa fa-chevron-right list-group-chevron"></i>
+       -->
+       <button (click)='logout()'class="list-group-item">  Logout
+      </button>
+</div> <!-- /.list-group -->
+
+
+
+<!-- end of settings -->
+
+
         <div class="profile-container">
             <div class="profile-sidebar">
                 <div class="desktop-sticky-top">

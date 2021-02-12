@@ -61,7 +61,7 @@ Regiester
 			</div>
 			<div class="form-holder">
 				<span class="lnr lnr-envelope"></span>
-				<input type="text" class="form-control" placeholder="Mail">
+				<input [(ngModel)]="newuser.email" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Mail">
 			</div>
 			<div class="form-holder">
 				<span class="lnr lnr-lock"></span>
