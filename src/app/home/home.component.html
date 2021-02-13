@@ -82,7 +82,7 @@
         <h3 class="font-weight-bold mb-3"><strong>{{ blog.title}}</strong></h3>
         <p>{{blog.content}} </p>
         <!-- Post data -->
-        <p>by <a><strong>{{ blog.author.username}}</strong></a>,{{ blog.postDate}}</p>
+        <p>by <a><strong>{{ blog.author.username}}</strong></a>, {{ blog.postDate | date:'MMMM dd, YYYY'}}</p>
         <!-- Read more button  -->
          <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
        

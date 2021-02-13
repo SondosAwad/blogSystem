@@ -13,7 +13,7 @@ import { CommentService } from '../_services/comment.service';
 })
 export class DetailblogComponent implements OnInit {
 
-       blog:Blog=new Blog("","",0,new Date(),0,"",[]);
+       blog:Blog = new Blog();
 
        comm:Comment=new Comment(0,"","",0,new Date(),0);
         comments:Comment[]=[];
@@ -60,6 +60,7 @@ export class DetailblogComponent implements OnInit {
             console.log(d);
             console.log(this.blog);
 
+            console.log(this.blog.comments);
           }
         )
       }
