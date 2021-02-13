@@ -35,7 +35,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 
     AddPostComponent,
     DetailblogComponent,
-    EditprofileComponent
+    EditprofileComponent,
   ],
   imports: [
     BrowserModule,

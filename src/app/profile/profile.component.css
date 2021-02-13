@@ -14,7 +14,9 @@ body{
     position: relative;
 }
 .profile .profile-header .profile-header-cover {
-    background: url(https://bootdey.com/img/Content/bg1.jpg);
+    /* background: url(https://bootdey.com/img/Content/bg1.jpg); */
+    /* background-color: #f8f8f8; */
+    background-image: linear-gradient(to right, #3a5a81, #d31336, #363242);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,7 +35,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(33, 40, 55, 0.35);
+    /* background: rgba(33, 40, 55, 0.35); */
 }
 .profile .profile-header .profile-header-content {
     position: relative;
@@ -135,7 +137,7 @@ body{
     margin-left: 0.9375rem;
 }
 .profile .profile-container {
-    padding: 30px 50px;
+    padding: 30px 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -146,7 +148,7 @@ body{
     }
 }
 .profile .profile-container .profile-sidebar {
-    width: 13.75rem;
+    width: 18rem;
 }
 @media (max-width: 991.98px) {
     .profile .profile-container .profile-sidebar {
@@ -222,4 +224,10 @@ body{
     line-height: 1.625rem;
     margin-top: -0.8125rem;
     text-align: center;
+}
+.container {
+    padding-right: 30px;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
