@@ -56,7 +56,7 @@ export class DetailblogComponent implements OnInit {
           
           d=>{
             this.blog=d
-            d.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+d.imgURL;
+           // d.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+d.imgURL;
             console.log(d);
             console.log(this.blog);
 

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     this.blogService.getAll().subscribe(
       blogs => {
         console.log(blogs);
-        blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
+       // blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
         this.blogs = blogs;
       }
     );

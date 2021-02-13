@@ -49,20 +49,25 @@ Regiester
 <div class="wrapper">
 	<div class="inner">
 		<img src="assets/images/image-1.png" alt="" class="image-1">
-		<form action="">
+		<form action="" #sign="ngForm">
 			<h3>New Account?</h3>
 			<div class="form-holder">
 				<span class="lnr lnr-user"></span>
-				<input [(ngModel)]="newuser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username">
+				<input [(ngModel)]="newuser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username" name="username" required #username="ngModel" minlength="6">
+				<p *ngIf="username.touched && username.errors?.required">username is required</p>
+				<p *ngIf="username.touched && username.errors?.minlength">minlength {{username.errors?.minlength.requiredLength}}</p>
 			</div>
 			
 			<div class="form-holder">
 				<span class="lnr lnr-envelope"></span>
-				<input [(ngModel)]="newuser.email" type="text" class="form-control" placeholder="Mail" [ngModelOptions]="{standalone: true}">
+				<input [(ngModel)]="newuser.email" type="text" class="form-control" placeholder="Mail" [ngModelOptions]="{standalone: true}" required #mail="ngModel" ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" >
+				<p *ngIf="mail.touched && mail.errors?.required">mail is required</p>
+				<p>EX:example@gmail.com</p>
 			</div>
 			<div class="form-holder">
 				<span class="lnr lnr-lock"></span>
-				<input [(ngModel)]="newuser.password" type="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Password">
+				<input [(ngModel)]="newuser.password" type="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Password" required #password="ngModel" ngModel pattern="[0-9]*" >
+				<p *ngIf="password.touched && password.errors?.required">password is required </p>
 			</div>
 			
 			<button (click)="register()">

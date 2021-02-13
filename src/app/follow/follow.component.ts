@@ -17,31 +17,49 @@ export class FollowComponent implements OnInit {
   logged:User=new User();
     constructor(private userservice:UserService,private router:Router) { }
    
-  // toggle = true;
-  // status = 'Enable'; 
-    
+  
 
-  followw(user:User){
+//----------------------------------------------------------------------------------------
 
-    // this.toggle = !this.toggle;
-    // this.status = this.toggle ? 'Enable' : 'Disable';
-
-    this.userservice.follow(user._id,this.logged).subscribe(
-      users => {
-        
-        console.log(users);
+   
+followw( id:any )
+  {
+    this.userservice.follow(id, this.logged).subscribe(
+     a=> {
        
+        console.log(a);
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/home']);
+   
+     });
+     
       }
-    );
-    
+    )
   }
+//----------------------------------------------------------------
+  
+
+  // followw(user:User){
+
+  //   // this.toggle = !this.toggle;
+  //   // this.status = this.toggle ? 'Enable' : 'Disable';
+
+  //   this.userservice.follow(user._id,this.logged).subscribe(
+  //     users => {
+        
+  //       console.log(users);
+       
+
+  //     }
+  //   );
+    
+  // }
 
 
   ngOnInit(): void {
 
     this.status="follow";
 
-    // this.userid = JSON.parse(localStorage.getItem(""));
     this.logged=JSON.parse(localStorage.getItem("user"));
 
     this.userservice.getusers().subscribe(

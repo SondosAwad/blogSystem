@@ -188,4 +188,7 @@
   
     .wrapper {
       background: none; } }
-  
+      
+      .ng-invalid{
+        border: 2px red solid;
+      }

@@ -32,7 +32,7 @@
 <div class="wrapper">
 	<div class="inner">
 		
-		<form action="">
+		<form action="" #log="ngForm">
             <h3>Login Form </h3>
             <div class="form-holder " >
                 <img src="assets/images/image-3.png" alt="" class="image-1"  >
@@ -40,12 +40,15 @@
            
 			<div class="form-holder">
 				<span class="lnr lnr-user"></span>
-				<input [(ngModel)]="loggedUser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username">
+				<input [(ngModel)]="loggedUser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username" #username="ngModel" minlength="6">
+                <p *ngIf="username.touched && username.errors?.required" >username is required</p>
+				<p *ngIf="username.touched && username.errors?.minlength">minlength {{username.errors?.minlength.requiredLength}}</p>
             </div>
             
 			<div class="form-holder">
 				<span class="lnr lnr-lock"></span>
-				<input [(ngModel)]="loggedUser.password" type="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Password">
+				<input [(ngModel)]="loggedUser.password" type="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Password" required #password="ngModel" ngModel pattern="[0-9]*">
+                <p *ngIf="password.touched && password.errors?.required">password is required </p>
 			</div>
 			
 			<button (click)="login()" >
