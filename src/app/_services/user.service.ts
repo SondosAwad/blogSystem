@@ -36,6 +36,11 @@ export class UserService {
     return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/users");
   }
 
+  editprofile(user: User) {​​​​
+    return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users", user );
+  }​​​​
+
+  
 
   constructor(public http: HttpClient) { }
 }

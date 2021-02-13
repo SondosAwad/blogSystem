@@ -10,27 +10,40 @@ import { UserService } from '../_services/user.service';
 })
 export class FollowComponent implements OnInit {
   users: User[] = [];
-  constructor(private userservice:UserService,private router:Router) { }
+  user!:User;
 
-  toggle = true;
-  status = 'Enable'; 
+  status!:string;
+  userid: Number=new Number();
+  logged:User=new User();
+    constructor(private userservice:UserService,private router:Router) { }
+   
+  // toggle = true;
+  // status = 'Enable'; 
+    
 
   followw(user:User){
 
-    this.toggle = !this.toggle;
-    this.status = this.toggle ? 'Enable' : 'Disable';
+    // this.toggle = !this.toggle;
+    // this.status = this.toggle ? 'Enable' : 'Disable';
 
-    // this.userservice.follow(id,user).subscribe(
-    //   users => {
-    //     console.log(users);
+    this.userservice.follow(user._id,this.logged).subscribe(
+      users => {
+        
+        console.log(users);
        
-    //   }
-    // );
+      }
+    );
+    
   }
 
- 
 
   ngOnInit(): void {
+
+    this.status="follow";
+
+    // this.userid = JSON.parse(localStorage.getItem(""));
+    this.logged=JSON.parse(localStorage.getItem("user"));
+
     this.userservice.getusers().subscribe(
       users => {
         console.log(users);
@@ -38,6 +51,29 @@ export class FollowComponent implements OnInit {
         this.users = users;
       }
     );
+
+    console.log(this.logged._id);
+    for(var i=0;i<this.users.length;i++)
+    {
+             if(this.users[i]._id==this.logged._id)
+             {
+                   status="my account";
+                   
+             }
+             
+            //  else {
+            //        for(var j=0;j<this.user.following.length;j++)
+            //        {
+            //            if(this.users[i]._id==this.user.following[j])
+            //             {
+            //                  status="following";
+            //              }
+            //              else{
+            //               status="follow";
+            //              }
+            //        }
+            //  }
+    }
   
   }
 

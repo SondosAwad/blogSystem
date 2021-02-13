@@ -13,6 +13,7 @@ import { BlogService } from '../_services/blog.service';
 })
 export class ProfileComponent implements OnInit {
 
+ // blog:Blog=new Blog("","",0,new Date(),0,"",[]);
   username: String=new String();
   blogs!: Blog[];
   blogtemp!:Blog;
@@ -21,7 +22,17 @@ export class ProfileComponent implements OnInit {
   getName() {
     this.username = localStorage.getItem("username");
   }
-     edit(e,blog,r:any,r1:any){
+
+  deletebyid(blog:Blog){
+
+    this.blogService.deleteblog(blog._id).subscribe(
+      d=>{
+        console.log(d);
+        this.router.navigateByUrl("/home");
+      }
+    )
+  }
+     edit(e:any,blog:Blog,r:any,r1:any){
            
             e.style.display="block";
             console.log(blog);
@@ -38,7 +49,7 @@ export class ProfileComponent implements OnInit {
        
      }
 
-     save(r,r1,e){
+     save(r:any,r1:any,e:any){
                  this.blogtemp.title=r.value;
                  this.blogtemp.content=r1.value;
          this.blogService.editblog(this.blogtemp._id,this.blogtemp).subscribe(

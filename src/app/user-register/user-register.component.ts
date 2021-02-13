@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-register.component.css']
 })
 export class UserRegisterComponent implements OnInit {
-  "newuser": User = new User(0, "", "");
+  "newuser": User = new User(0, "","", "",0,[],[]);
   constructor(public userService: UserService, public router: Router) { }
   register() {
     this.userService.regist(this.newuser).subscribe(

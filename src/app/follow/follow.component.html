@@ -9,7 +9,8 @@
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User Avatar" class="media-object pull-left">
                 <div class="media-body">
                     <a href="#">{{ user.username}}<br><span class="text-muted username">@{{ user.username}}</span></a>
-                    <button type="button" class="btn btn-sm btn-toggle-following pull-right" (click)="followw(user)" [ngClass]="{'green' : toggle, 'red': !toggle}"><i class="fa fa-checkmark-round"></i> <span>Follow</span></button>
+                    <button type="button" class="btn btn-sm btn-toggle-following pull-right" (click)="followw(user)" ><i class="fa fa-checkmark-round"></i> <span> {{status}} </span> </button>
+                    
                 </div>
             </div>
     </div>

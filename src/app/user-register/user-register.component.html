@@ -55,13 +55,10 @@ Regiester
 				<span class="lnr lnr-user"></span>
 				<input [(ngModel)]="newuser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username">
 			</div>
-			<div class="form-holder">
-				<span class="lnr lnr-phone-handset"></span>
-				<input type="text" class="form-control" placeholder="Phone Number">
-			</div>
+			
 			<div class="form-holder">
 				<span class="lnr lnr-envelope"></span>
-				<input type="text" class="form-control" placeholder="Mail">
+				<input [(ngModel)]="newuser.email" type="text" class="form-control" placeholder="Mail" [ngModelOptions]="{standalone: true}">
 			</div>
 			<div class="form-holder">
 				<span class="lnr lnr-lock"></span>
@@ -72,7 +69,7 @@ Regiester
 				<span>Register</span>
 			</button>
 		</form>
-		<img src="images/image-2.png" alt="" class="image-2">
+		<img src="assets/images/image-2.png" alt="" class="image-2">
 	</div>
 	
 </div>

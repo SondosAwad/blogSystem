@@ -15,10 +15,7 @@ export class BlogService {
     return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com/blogs");
   }
   addblogimg(fd:FormData){
-    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",fd,{
-      reportProgress:true,
-      observe:'events'
-    });
+    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",fd);
   }
   addblog(blog:Blog){
     return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",blog);
@@ -28,14 +25,6 @@ export class BlogService {
     return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/"+id)
   }
 
-
-
-
-
-
-
-
-  
   deleteblog(id:number){
     return this.http.delete("https://yourcoolblogpost.herokuapp.com/blogs/"+id);
   }
