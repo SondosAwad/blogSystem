@@ -1,6 +1,9 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/Button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import $ = require('jquery');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +24,12 @@ import { DetailblogComponent } from './detailblog/detailblog.component';
 
 import { SearchComponent } from './search/search.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+<<<<<<< Updated upstream
 
+=======
+import { ExploreComponent } from './explore/explore.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,15 +46,23 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 
     AddPostComponent,
     DetailblogComponent,
+<<<<<<< Updated upstream
     SearchComponent,
     EditprofileComponent
 
+=======
+    EditprofileComponent,
+    ExploreComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatButtonToggleModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

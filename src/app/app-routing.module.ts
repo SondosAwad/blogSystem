@@ -16,6 +16,7 @@ import { FollowProfileComponent } from './follow-profile/follow-profile.componen
 
 import { AddPostComponent } from './add-post/add-post.component';
 import { DetailblogComponent } from './detailblog/detailblog.component';
+import { ExploreComponent } from './explore/explore.component';
 
 
 const routes: Routes = [
@@ -32,9 +33,16 @@ const routes: Routes = [
   { path: 'users/follow', component: FollowComponent },
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
+<<<<<<< Updated upstream
 
   //search
   { path: 'search/:key', component: SearchComponent },
+=======
+  //edit profile
+  { path: 'users/editprofile', component: EditprofileComponent },
+
+  { path: 'explore', component: ExploreComponent},
+>>>>>>> Stashed changes
 
   { path: 'blogs', component: AddPostComponent },
   { path: 'blogs/detail/:id', component: DetailblogComponent },

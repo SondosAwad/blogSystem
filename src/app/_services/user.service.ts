@@ -30,10 +30,21 @@ export class UserService {
   }
 
 
+<<<<<<< Updated upstream
 
+=======
+  //search by id 
+  searchbyid(id: number) {
+    return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/id/" + id);
+  }
+>>>>>>> Stashed changes
   //follow
-  follow(id: number, user: User) {
-    return this.http.patch("https://yourcoolblogpost.herokuapp.com/users/follow" + id, user);
+  follow(id: number, loggedUser: User) {
+    return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users/follow/" + id, loggedUser);
+  }
+ //unfollow
+  unFollow(id: number, loggedUser: User) {
+    return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users/unfollow/" + id, loggedUser);
   }
 
   getusers() {

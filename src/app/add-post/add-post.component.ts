@@ -11,7 +11,7 @@ import { BlogService } from '../_services/blog.service';
 })
 export class AddPostComponent implements OnInit {
 
-     newblog:Blog=new Blog("","",0,new Date(),0,"",[]);
+     newblog:Blog=new Blog("","",0,new Date(),0,"","",[]);
 
       fd:FormData=new FormData();
 
