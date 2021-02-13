@@ -33,20 +33,11 @@ const routes: Routes = [
   { path: 'users/follow', component: FollowComponent },
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
-<<<<<<< Updated upstream
-
   //search
   { path: 'search/:key', component: SearchComponent },
-=======
-  //edit profile
-  { path: 'users/editprofile', component: EditprofileComponent },
-
   { path: 'explore', component: ExploreComponent},
->>>>>>> Stashed changes
-
   { path: 'blogs', component: AddPostComponent },
   { path: 'blogs/detail/:id', component: DetailblogComponent },
-
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'myblogs', component: UserBlogsComponent },
   { path: '**', component: NotfoundComponent }

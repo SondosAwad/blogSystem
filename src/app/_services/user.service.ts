@@ -29,15 +29,6 @@ export class UserService {
     return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/user/search/" + key);
   }
 
-
-<<<<<<< Updated upstream
-
-=======
-  //search by id 
-  searchbyid(id: number) {
-    return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/id/" + id);
-  }
->>>>>>> Stashed changes
   //follow
   follow(id: number, loggedUser: User) {
     return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users/follow/" + id, loggedUser);

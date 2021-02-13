@@ -1,5 +1,5 @@
-
-<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<nav class="navbar navbar-default" role="navigation" style="height: 100px; padding-top: 20px; border-radius: 0;">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -20,54 +20,30 @@
       <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
       <li routerLinkActive="active" *ngIf="loggedIn()"><a routerLink="/explore">Explore</a></li>
       <!-- profile -->
-      <li routerLinkActive="active"><a routerLink="/users/profile">Profile</a></li>
+      <li routerLinkActive="active" *ngIf="loggedIn()"><a routerLink="/users/profile">Profile</a></li>
     </ul>
     <!-- search -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <form action="/hms/accommodations" method="GET"> 
-      <div class="row">
-        <div class="col-xs-6 col-md-4">
+      <!-- <div class="row"> -->
+        <div class="col-xs-6 col-md-4" style="margin-top: 6px;">
           <div class="input-group">
             <input #key type="text" class="form-control" placeholder="Search" id="txtSearch"/>
             <div class="input-group-btn">
-               
-              <a click="gosearch(key.value)" [routerLink]="['/search/'+key.value]"  class="btn btn-primary" type="submit">
-                <span  class="glyphicon glyphicon-search"></span>
-              </a>
+                <!-- search by id -->
+                <a click="gosearch(key.value)" [routerLink]="['/search/'+key.value]"  class="btn btn-primary" type="submit">
+                  <span  class="glyphicon glyphicon-search"></span>
+                </a>
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </form>
-
-    <!-- routerLink="/search" -->
-    
-    
- 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active"><a routerLink="/users/login">Login</a></li>
-      <li routerLinkActive="active"><a routerLink="/users/register">Register</a></li>
-      <li class="dropdown">
+      <li routerLinkActive="active" *ngIf="!loggedIn()"><a routerLink="/users/login">Login</a></li>
+      <li routerLinkActive="active" *ngIf="!loggedIn()" style="margin-right: 5px;"><a routerLink="/users/register">Register</a></li>
+      <li routerLinkActive="active" *ngIf="loggedIn()" style="margin-right: 5px;"><a routerLink="/users/login" (click)="logout()">Log out</a></li>
+        <!-- <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">Action</a></li>
@@ -75,12 +51,12 @@
           <li><a href="#">Something else here</a></li>
           <li><a href="#">Separated link</a></li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
 
-
 <router-outlet>
 
 </router-outlet>
+</div>

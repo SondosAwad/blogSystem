@@ -1,1 +1,47 @@
 
+
+
+element.style {
+    height: 60px;
+    padding-top: 15px;
+}
+.navbar-default {
+    background-image: linear-gradient(to right, #3a5a81, #d31336, #363242);
+
+    border-color: #e7e7e7;
+    /* background: url(https://bootdey.com/img/Content/bg1.jpg); */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://bootdey.com/img/Content/bg1.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* a.navbar-brand{
+    width: 200px;
+} */
+body > app-root > div > nav > div.navbar-header{
+    padding-top: 0;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 0;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+} 
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(112, 112, 231);
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+}
+/* .navbar-nav>li>a:hover {
+    color: blue;
+    background-color: transparent;
+} */

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
         this.loggedUser = user;
 
 
-        localStorage.setItem('token', user.token);
+        //localStorage.setItem('token', user.token);
         localStorage.setItem('user', JSON.stringify(this.loggedUser));
 
         window.localStorage['username'] = user.username;

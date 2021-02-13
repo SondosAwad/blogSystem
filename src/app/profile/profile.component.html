@@ -1,140 +1,163 @@
 <div class="container">
-    <div class="profile">
-        <div class="profile-header">
-            <div class="profile-header-cover"></div>
-            <div class="profile-header-content">
-                <div class="profile-header-img">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                </div>
-                <ul class="profile-header-tab nav nav-tabs nav-tabs-v2">
-                    <li class="nav-item">
-                        <a href="#profile-post" class="nav-link" data-toggle="tab">
-                            <div class="nav-field">Posts</div>
-                            <div class="nav-value">382</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a routerLink ="/users/follow" class="nav-link " data-toggle="tab">
-                            <div class="nav-field">Followers</div>
-                            <div  class="nav-value">1.3m</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#profile-media" class="nav-link" data-toggle="tab">
-                            <div class="nav-field">Photos</div>
-                            <div class="nav-value">1,397</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#profile-media" class="nav-link" data-toggle="tab">
-                            <div class="nav-field">Videos</div>
-                            <div class="nav-value">120</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#profile-followers" class="nav-link" data-toggle="tab">
-                            <div class="nav-field">Following</div>
-                            <div class="nav-value">2,592</div>
-                        </a>
-                        
-                    </li>
-                </ul>
-                
-            </div>
-        </div>
-    
-  
-        <div class="profile-container">
-          <div class="profile-sidebar">
-              <div class="desktop-sticky-top">
-                  <h4>{{username}}</h4>
-                  <div class="font-weight-600 mb-3 text-muted mt-n2">@{{username}}</div>
-                
-                  <div class="mb-1"><i class="fa fa-map-marker-alt fa-fw text-muted"></i> Egypt</div>
-                  <div class="mb-3"><i class="fa fa-link fa-fw text-muted"></i> Welcome To My Profile :P</div>
-                  <hr class="mt-4 mb-4" />
+  <div class="profile">
+      <div class="profile-header">
+          <div class="profile-header-cover"></div>
+          <div class="profile-header-content">
+              <div class="profile-header-img">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
               </div>
-
+              <ul class="profile-header-tab nav nav-tabs nav-tabs-v2">
+                  <li class="nav-item">
+                      <a href="#profile-post" class="nav-link" data-toggle="tab">
+                          <div class="nav-field">Posts</div>
+                          <div class="nav-value">382</div>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink ="/users/follow" class="nav-link " data-toggle="tab">
+                          <div class="nav-field">Followers</div>
+                          <div  class="nav-value">1.3m</div>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#profile-media" class="nav-link" data-toggle="tab">
+                          <div class="nav-field">Photos</div>
+                          <div class="nav-value">1,397</div>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#profile-media" class="nav-link" data-toggle="tab">
+                          <div class="nav-field">Videos</div>
+                          <div class="nav-value">120</div>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#profile-followers" class="nav-link" data-toggle="tab">
+                          <div class="nav-field">Following</div>
+                          <div class="nav-value">2,592</div>
+                      </a>
+                      
+                  </li>
+              </ul>
+              
           </div>
-       </div>
+      </div>
+  
+          <!-- search -->
+          <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+          <form action="/hms/accommodations" method="GET"> 
+            <div class="row">
+              <div class="col-xs-6 col-md-4">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
+                  <div class="input-group-btn"> -->
+                      <!-- search by id -->
+                    <!-- <button  routerLink ="/users/id" class="btn btn-primary" type="submit">
+                      <span  class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form> -->
+          <!-- end of search box -->
 
- <!-- settings -->
 
- <div class="list-group">  
+
+<!-- settings -->
+
+<!-- <div class="list-group">  
   <a routerLink ='/users/editprofile' class="list-group-item">
-      <i  class="fa fa-asterisk"></i> Edit Profile
-      <i class="fa fa-chevron-right list-group-chevron"></i>
+    <i  class="fa fa-asterisk"></i> Edit Profile
+    <i class="fa fa-chevron-right list-group-chevron"></i>
   </a> 
-  <button (click)='deactivate()'class="list-group-item">  Deactivate my account 
-</button>
-
-      <!-- <i class="fa fa-chevron-right list-group-chevron"></i>
-       -->
-       <button (click)='logout()'class="list-group-item">  Logout
-      </button>
-</div> <!-- /.list-group -->
+  <button (click)='deactivate()'class="list-group-item">  Deactivate my account</button>
+  <button (click)='logout()'class="list-group-item">  Logout</button>
+</div>  -->
+<!-- /.list-group -->
 
 
 
 <!-- end of settings -->
-       
-            <section class="my-5">
-             <div id="blogs" *ngFor = "let blog of blogs">
-                <div class="row" >
-                
-                  <div class="col-lg-3">
-              
-                    <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
-                      <img  class="img-fluid" src= "{{blog.imgURL}}" alt="Sample image">
-                      <a>
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                 
-                  </div>
-                  <div class="col-lg-3">
-                    <h3 class="font-weight-bold mb-3"><strong>{{ blog.title}}</strong></h3>
-                    <p>{{blog.content}} </p>
-                    <p>by <a><strong>{{ blog.author.username}}</strong></a>,{{ blog.postDate | date:'MMMM dd, YYYY'}}</p>
-                    <!-- Read more button  -->
-                     <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a><br>
-                     
-                     <button type="button" class="btn btn-default" aria-label="Left Align" (click)="edit(m,blog,r,r1)">
-                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" (click)="deletebyid(blog)">
-                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                
-                </div>
-            </div>
-              </section>
+
+
+      <div class="profile-container">
+          <div class="profile-sidebar">
+              <div class="desktop-sticky-top">
+                  <h4>{{username}}</h4>
+                  <div class="font-weight-600 mb-3 text-muted mt-n2">@{{username}}</div>
+                  
+                  <div class="list-group">  
+                    <a routerLink ='/users/editprofile' class="list-group-item">
+                      <i  class="fa fa-asterisk"></i> Edit Profile
+                      <i class="fa fa-chevron-right list-group-chevron"></i>
+                    </a> 
+                    <button (click)='deactivate()'class="list-group-item">  Deactivate my account</button>
+
+                      <!-- <i class="fa fa-chevron-right list-group-chevron"></i>
+                      -->
+                    <button (click)='logout()'class="list-group-item">  Logout</button>
+                  </div> <!-- /.list-group -->
+              </div>
+          </div>
+       </div>
+     
+          <section class="my-5">
+           <div id="blogs" *ngFor = "let blog of blogs">
+              <div class="row" >
+
+                <div class="col-lg-3">
             
-              <div id="mymodel" class="modal" #m>
-                <div class="modal-dialog modal-lg" >
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" (click)='close(m)' data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-                      </button>
-                      <h4 class="modal-title">Edit Person</h4>
+                  <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+                    <img  class="img-fluid" src= "{{blog.imgURL}}" alt="Sample image">
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+               
+                </div>
+                <div class="col-lg-3">
+                  <h3 class="font-weight-bold mb-3"><strong>{{ blog.title}}</strong></h3>
+                  <p>{{blog.content}} </p>
+                  <p>by <a><strong>{{ blog.author.username}}</strong></a>,{{ blog.postDate | date:'MMMM dd, YYYY'}}</p>
+                  <!-- Read more button  -->
+                   <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
+
+                   <button type="button" class="btn btn-default" aria-label="Left Align" (click)="edit(m,blog,r,r1)">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" aria-label="Left Align" (click)="deletebyid(blog)">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+          </div>
+            </section>
+          
+            <div id="mymodel" class="modal" #m>
+              <div class="modal-dialog modal-lg" >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" (click)='close(m)' data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Edit Person</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label>title:</label>
+                      <input  class="form-control" #r>
+                      <label>content:</label>
+                      <input  class="form-control" #r1>
                     </div>
-                    <div class="modal-body">
-                      <div class="form-group">
-                        <label>title:</label>
-                        <input  class="form-control" #r>
-                        <label>content:</label>
-                        <input  class="form-control" #r1>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal" (click)='close(m)'>Close</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal" (click)="save(r,r1,m)">edit</button>
-                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" (click)='close(m)'>Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="save(r,r1,m)">edit</button>
                   </div>
                 </div>
               </div>
-            
-    </div>
+            </div>
+          
+  </div>
 </div>

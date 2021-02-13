@@ -9,12 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-register.component.css']
 })
 export class UserRegisterComponent implements OnInit {
-  "newuser": User = new User(0, "","", "",0,[],[]);
+
+  newuser: User = new User();
+
   constructor(public userService: UserService, public router: Router) { }
   register() {
+    console.log(this.newuser);
     this.userService.regist(this.newuser).subscribe(
       a =>
-        this.router.navigate(['/users/login']) //concatinate elments 
+        this.router.navigate(['/home']) //concatinate elments 
     )
   }
   ngOnInit(): void {

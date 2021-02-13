@@ -11,7 +11,7 @@ import { BlogService } from '../_services/blog.service';
 export class HomeComponent implements OnInit {
 
   blogs: Blog[] = [];
-  newblog: Blog = new Blog("", "", 0, new Date(), 0, "", []);
+  newblog: Blog = new Blog();
   fd: FormData = new FormData();
   constructor(private blogService: BlogService, private router: Router) { }
 
@@ -48,10 +48,6 @@ export class HomeComponent implements OnInit {
     this.blogService.getAll().subscribe(
       blogs => {
         console.log(blogs);
-<<<<<<< Updated upstream
-=======
-        //blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
->>>>>>> Stashed changes
         this.blogs = blogs;
       }
     );

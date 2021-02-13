@@ -13,7 +13,7 @@ import { CommentService } from '../_services/comment.service';
 })
 export class DetailblogComponent implements OnInit {
 
-  blog: Blog = new Blog("", "", 0, new Date(), 0, "", []);
+  blog: Blog = new Blog();
   comm: Comment = new Comment(0, "", "", 0, new Date(), 0);
   comments: Comment[] = [];
   logged: User = new User();
@@ -42,18 +42,10 @@ export class DetailblogComponent implements OnInit {
       a => {
         id = a['id']
         this.blogService.detailblog(id).subscribe(
-<<<<<<< Updated upstream
           d => {
             this.blog = d
             console.log(d);
             console.log(this.blog);
-=======
-          
-          d=>{
-            this.blog=d
-            //d.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+d.imgURL;
-            console.log(this.blog.comments);
->>>>>>> Stashed changes
           }
         )
       }
