@@ -17,32 +17,12 @@
   
         <h3 class="font-weight-bold mb-3"><strong>{{ blog.title }}</strong></h3>
         <p>{{ blog.content }} </p>
-        <p>by <a><strong>{{ blog.author.username }}</strong></a>,{{ blog.postDate }}</p>
+        <p>by <a><strong>{{ blog.author.username }}</strong></a>,{{ blog.postDate |date:'MMM dd, YYYY' }}</p>
       </div>
     </div>
   </section>
   
-  <!-- <div class="com1">
-  <div class="comment-box add-comment">
-    
-    <span class="commenter-pic">
-      <img src="assets/images/comment.png" class="img-fluid">
-    </span>
-    <span class="commenter-name">
-      <input  [(ngModel)]="comm.content" type="text" placeholder="Add a public comment" name="Add Comment" [ngModelOptions]="{standalone: true}">
 
-      <button type="submit" class="btn btn-default" (click)="commentbtn()">Comment</button>
-      <button type="cancel" class="btn btn-default">Cancel</button>
-
-    </span>
-    <div id="comms" *ngFor = "let comm of blog.comments">
-			<p class="be-comment-text">
-            {{comm.content}}
-			</p>
-    </div>
-  </div>
-  </div>
-  <button (click)="deletebyid()">delete</button> -->
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <section class="content-item" id="comments">
@@ -70,7 +50,7 @@
                 <div class="media">
                     <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
                     <div class="media-body">
-                        <h4 class="media-heading">{{logged.username}}</h4>
+                        <h4 class="media-heading">{{comm.author.username}}</h4>
                         <p>{{comm.content}}</p>
                         <ul class="list-unstyled list-inline media-detail pull-left">
                             <li><i class="fa fa-calendar"></i>{{comm.postDate}}</li>

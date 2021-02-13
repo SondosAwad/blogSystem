@@ -3,7 +3,17 @@ img {
   margin-top: 10%; */
   width: 50%;
   height: 400px;
+}
 
+/* div.panel-body {
+  background-color: beige;
+} */
+
+.ff {
+  /* margin-right: 50%; */
+  margin-left: 25%;
+  width: 100%;
+  background-color: rgb(15, 48, 68);
 
 }
 
@@ -12,9 +22,7 @@ img {
   margin-top: 30px;
 
 }
-div.panel-body{
-    background-color:beige ;
-}
+
 
 input{
     border-top: 0%;

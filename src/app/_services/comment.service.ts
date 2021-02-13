@@ -7,11 +7,11 @@ import { Comment } from '../_models/comment';
 })
 export class CommentService {
 
-  
-  
-  addcomment(id:number,com:Comment){
 
-    return this.http.post<Comment>("https://yourcoolblogpost.herokuapp.com/blogdetail/"+id+"/comment",com);
+
+
+  addcomment(id: number, com: Comment) {
+    return this.http.post<Comment>("https://yourcoolblogpost.herokuapp.com/blogdetail/" + id + "/comment", com);
   }
 
 

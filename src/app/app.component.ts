@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'blogSystem';
 
-  gosearch() {
+
+
+  gosearch(k: string) {
     location.reload();
+    console.log(k);
   }
 
 

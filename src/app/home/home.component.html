@@ -2,8 +2,8 @@
  <!-- <a routerLink="/blogs" class="btn btn-danger">Add blog</a> -->
  <div class="container">
   <div class="row" id="row_style">
- <div class="col-md-8 col-sm-12 pull-left posttimeline">
-  <div class="panel panel-default">
+ <div class="col-md-8 col-sm-12  posttimeline">
+  <div class="panel panel-default" class="ff">
     <div class="panel-body">
       <div class="status-upload nopaddingbtm">
         <form>
@@ -16,7 +16,7 @@
             <input class="glyphicon glyphicon-picture"  type="file" (change)="onfileselected($event)" data-original-title="Picture" [ngModelOptions]="{standalone: true}">
         
           </ul>
-          <button type="submit"  class="btn btn-success pull-right" (click)="save()"> Share</button>
+          <button type="submit"  class="btn btn-success " (click)="save()"> Share</button>
         </form>
       </div>
       <!-- Status Upload  --> 
@@ -76,17 +76,7 @@
           <a href="#" class="btn-link text-semibold media-heading box-inline">{{ blog.author.username}}</a>
           <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From web   {{blog.postDate |date:'MMM dd, YYYY'}}</p>
         </div>
-<<<<<<< Updated upstream
-      </div>
-      <div class="col-lg-3">
-        <h3 class="font-weight-bold mb-3"><strong>{{ blog.title}}</strong></h3>
-        <p>{{blog.content}} </p>
-        <!-- Post data -->
-        <p>by <a><strong>{{ blog.author.username}}</strong></a>,{{ blog.postDate}}</p>
-        <!-- Read more button  -->
-         <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
-       
-=======
+
         <p >{{blog.title}}</p>
         <img class="img-responsive thumbnail" src= "{{blog.imgURL}}" alt="Image">
         <p >{{blog.content}}</p>
@@ -99,11 +89,11 @@
             <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
             <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
           </div>
-          <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+          <a class="btn btn-sm btn-default btn-hover-primary" [routerLink]="['/blogs/detail/',blog._id]">Comment</a>
         </div>
         <hr>
 
->>>>>>> Stashed changes
+
       </div>
     </div>
     <!--===================================================-->

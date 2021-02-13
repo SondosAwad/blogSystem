@@ -18,11 +18,10 @@ import { FollowProfileComponent } from './follow-profile/follow-profile.componen
 
 import { AddPostComponent } from './add-post/add-post.component';
 import { DetailblogComponent } from './detailblog/detailblog.component';
-<<<<<<< Updated upstream
-=======
-import { EditprofileComponent } from './editprofile/editprofile.component';
+
 import { SearchComponent } from './search/search.component';
->>>>>>> Stashed changes
+import { EditprofileComponent } from './editprofile/editprofile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +37,10 @@ import { SearchComponent } from './search/search.component';
 
 
     AddPostComponent,
-<<<<<<< Updated upstream
-    DetailblogComponent
-=======
     DetailblogComponent,
-    EditprofileComponent,
-    SearchComponent
->>>>>>> Stashed changes
+    SearchComponent,
+    EditprofileComponent
+
   ],
   imports: [
     BrowserModule,

@@ -48,11 +48,6 @@ export class HomeComponent implements OnInit {
     this.blogService.getAll().subscribe(
       blogs => {
         console.log(blogs);
-<<<<<<< Updated upstream
-       // blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
-=======
-        //  blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
->>>>>>> Stashed changes
         this.blogs = blogs;
       }
     );

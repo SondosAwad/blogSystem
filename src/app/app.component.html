@@ -26,7 +26,7 @@
             <input #key type="text" class="form-control" placeholder="Search" id="txtSearch"/>
             <div class="input-group-btn">
                
-              <a click="gosearch()" [routerLink]="['/search/'+key.value]"  class="btn btn-primary" type="submit">
+              <a click="gosearch(key.value)" [routerLink]="['/search/'+key.value]"  class="btn btn-primary" type="submit">
                 <span  class="glyphicon glyphicon-search"></span>
               </a>
             </div>

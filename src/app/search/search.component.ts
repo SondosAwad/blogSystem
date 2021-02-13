@@ -43,14 +43,14 @@ export class SearchComponent implements OnInit {
 
 
 
-        this.userService.search(this.key).subscribe(
-          a => {
-            console.log(a);
-            this.users = a;
+        // this.userService.search(this.key).subscribe(
+        //   a => {
+        //     console.log(a);
+        //     this.users = a;
 
 
-          }
-        )
+        //   }
+        // )
       }
 
     )

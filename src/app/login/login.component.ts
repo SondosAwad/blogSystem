@@ -17,14 +17,11 @@ export class LoginComponent implements OnInit {
       user => {
         console.log(user);
         this.loggedUser = user;
-<<<<<<< Updated upstream
+
 
         localStorage.setItem('token', user.token);
-        localStorage.setItem('user',JSON.stringify( this.loggedUser));
-=======
-        // localStorage.setItem('token', user.token);
-        localStorage.setItem('user', JSON.stringify(user));
->>>>>>> Stashed changes
+        localStorage.setItem('user', JSON.stringify(this.loggedUser));
+
         window.localStorage['username'] = user.username;
         this.router.navigate(['/users/profile']);
       }

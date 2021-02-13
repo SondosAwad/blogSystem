@@ -1,8 +1,7 @@
-<<<<<<< Updated upstream
-=======
+
 import { SearchComponent } from './search/search.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
->>>>>>> Stashed changes
+
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -27,9 +26,10 @@ const routes: Routes = [
   { path: 'users/login', component: LoginComponent },
   //profile
   { path: 'users/profile', component: ProfileComponent },
-
+  //edit profile
+  { path: 'users/editprofile', component: EditprofileComponent },
   //follow
-   { path: 'users/follow', component: FollowComponent },
+  { path: 'users/follow', component: FollowComponent },
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
 
@@ -42,13 +42,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'myblogs', component: UserBlogsComponent },
   { path: '**', component: NotfoundComponent }
-
-
-
-
-
-
-
 
 
 

@@ -54,7 +54,7 @@
           <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From web   {{items.postDate |date:'MMM dd, YYYY'}}</p>
         </div>
         <p >{{items.title}}</p>
-        <img class="img-responsive thumbnail" [src]="['https://yourcoolblogpost.herokuapp.com/'+items.imgURL]" alt="Image">
+        <img class="img-responsive thumbnail" src={{items.imgURL}} alt="Image">
         <p >{{items.content}}</p>
 
         <div class="pad-ver">
@@ -63,7 +63,7 @@
             <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
             <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
           </div>
-          <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+          <a class="btn btn-sm btn-default btn-hover-primary" [routerLink]="['/blogs/detail/',items._id]">Comment</a>
         </div>
         <hr>
 

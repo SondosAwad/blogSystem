@@ -14,13 +14,10 @@ export class BlogService {
   getUserBlogs() {
     return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com/blogs");
   }
-<<<<<<< Updated upstream
-  addblogimg(fd:FormData){
-    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",fd);
-=======
+
   addblogimg(fd: FormData) {
     return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs", fd);
->>>>>>> Stashed changes
+
   }
   addblog(blog: Blog) {
     return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs", blog);
@@ -30,10 +27,7 @@ export class BlogService {
     return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/" + id)
   }
 
-<<<<<<< Updated upstream
-  deleteblog(id:number){
-    return this.http.delete("https://yourcoolblogpost.herokuapp.com/blogs/"+id);
-=======
+
 
   //search  
   search(key: string) {
@@ -42,7 +36,7 @@ export class BlogService {
 
   deleteblog(id: number) {
     return this.http.delete("https://yourcoolblogpost.herokuapp.com/blogs/" + id);
->>>>>>> Stashed changes
+
   }
   editblog(id: number, blog: Blog) {
     return this.http.patch("https://yourcoolblogpost.herokuapp.com/blogs/" + id, blog);

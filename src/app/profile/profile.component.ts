@@ -12,65 +12,81 @@ import { BlogService } from '../_services/blog.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
- // blog:Blog=new Blog("","",0,new Date(),0,"",[]);
-  username: String=new String();
+  username: String = new String();
   blogs!: Blog[];
-  blogtemp!:Blog;
-  constructor(private userService: UserService,private blogService: BlogService, private router: Router) { }
+  blogtemp!: Blog;
+  constructor(private userService: UserService, private blogService: BlogService, private router: Router) { }
 
   getName() {
     this.username = localStorage.getItem("username");
   }
 
-  deletebyid(blog:Blog){
+  deletebyid(blog: Blog) {
 
     this.blogService.deleteblog(blog._id).subscribe(
-      d=>{
+      d => {
         console.log(d);
         this.router.navigateByUrl("/home");
       }
     )
   }
-     edit(e:any,blog:Blog,r:any,r1:any){
-           
-            e.style.display="block";
-            console.log(blog);
-            console.log(e);
-            this.blogtemp=blog;
+  edit(e: any, blog: Blog, r: any, r1: any) {
 
-            r.value=blog.title;
-            r1.value=blog.content;
+    e.style.display = "block";
+    console.log(blog);
+    console.log(e);
+    this.blogtemp = blog;
 
-     }
-     close(e)
-     {
-       e.style.display="none";
-       
-     }
+    r.value = blog.title;
+    r1.value = blog.content;
 
-     save(r:any,r1:any,e:any){
-                 this.blogtemp.title=r.value;
-                 this.blogtemp.content=r1.value;
-         this.blogService.editblog(this.blogtemp._id,this.blogtemp).subscribe(
+  }
+  close(e: any) {
+    e.style.display = "none";
 
-          a=>{
-            e.style.display="none";
-            this.router.navigate(['/users/profile']);
-          }
-         )
-     }
+  }
+
+  save(r: any, r1: any, e: any) {
+    this.blogtemp.title = r.value;
+    this.blogtemp.content = r1.value;
+    this.blogService.editblog(this.blogtemp._id, this.blogtemp).subscribe(
+
+      a => {
+        e.style.display = "none";
+        this.router.navigate(['/users/profile']);
+      }
+    )
+  }
+
+
+  //deactivate
+  deactivate() {
+    this.userService.deactivate().subscribe(
+      user => {
+        localStorage.clear();
+        this.router.navigate(['/users/register']);
+      }
+    )
+  }
+
+
+  //logout
+  logout() {
+    this.userService.logout().subscribe(
+      user => {
+        localStorage.clear();
+        this.router.navigate(['/users/login']);
+      }
+    )
+  }
+
+
 
   ngOnInit(): void {
     this.getName();
     this.blogService.getUserBlogs().subscribe(
       blogs => {
         console.log(blogs);
-<<<<<<< Updated upstream
-        blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
-=======
-        // blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/" + blog.imgURL);
->>>>>>> Stashed changes
         this.blogs = blogs;
       }
     );
