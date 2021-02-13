@@ -12,7 +12,6 @@ import { BlogService } from '../_services/blog.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
   username: String = new String();
   blogs!: Blog[];
   blogtemp!: Blog;
@@ -21,7 +20,17 @@ export class ProfileComponent implements OnInit {
   getName() {
     this.username = localStorage.getItem("username");
   }
-  edit(e, blog, r: any, r1: any) {
+
+  deletebyid(blog: Blog) {
+
+    this.blogService.deleteblog(blog._id).subscribe(
+      d => {
+        console.log(d);
+        this.router.navigateByUrl("/home");
+      }
+    )
+  }
+  edit(e: any, blog: Blog, r: any, r1: any) {
 
     e.style.display = "block";
     console.log(blog);
@@ -32,12 +41,12 @@ export class ProfileComponent implements OnInit {
     r1.value = blog.content;
 
   }
-  close(e) {
+  close(e: any) {
     e.style.display = "none";
 
   }
 
-  save(r, r1, e) {
+  save(r: any, r1: any, e: any) {
     this.blogtemp.title = r.value;
     this.blogtemp.content = r1.value;
     this.blogService.editblog(this.blogtemp._id, this.blogtemp).subscribe(
@@ -48,6 +57,8 @@ export class ProfileComponent implements OnInit {
       }
     )
   }
+
+
   //deactivate
   deactivate() {
     this.userService.deactivate().subscribe(
@@ -70,12 +81,12 @@ export class ProfileComponent implements OnInit {
   }
 
 
+
   ngOnInit(): void {
     this.getName();
     this.blogService.getUserBlogs().subscribe(
       blogs => {
         console.log(blogs);
-        blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/" + blog.imgURL);
         this.blogs = blogs;
       }
     );

@@ -24,19 +24,24 @@ export class UserService {
     return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/profile" + username);
   }
 
-  //edit profile 
-  editprofile(user: User) {
-    return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users", user);
+  //search  
+  search(key: string) {
+    return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/user/search/" + key);
   }
 
 
-  //search by id 
-  searchbyid(id: number) {
-    return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/id" + id);
-  }
+
   //follow
   follow(id: number, user: User) {
     return this.http.patch("https://yourcoolblogpost.herokuapp.com/users/follow" + id, user);
+  }
+
+  getusers() {
+    return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/users");
+  }
+  //editprofile
+  editprofile(user: User) {
+    return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users", user);
   }
   //deactivate
   deactivate() {
@@ -45,10 +50,6 @@ export class UserService {
   //logout
   logout() {
     return this.http.delete<User>("https://yourcoolblogpost.herokuapp.com/users/logout");
-  }
-
-  getusers() {
-    return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/users");
   }
 
 

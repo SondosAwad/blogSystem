@@ -1,79 +1,36 @@
 
 
 
-<!-- <input [(ngModel)]="newuser._id">
-<input [(ngModel)]="newuser.username">
-<input [(ngModel)]="newuser.password">
-<button (click)="register()">
-Regiester
-</button> -->
-
-
-
-
-
-<!-- <div class="form-horizontal">
-
-
-    <div class="form-group"> -->
-        <!-- <label for="name" class="col-sm-3 control-label "> name</label>
-        <div class="col-sm-4">
-            <input [(ngModel)]="estudent.Name" type="text" class="form-control" id="name" placeholder="Input name">
-        </div>
-    </div> -->
-
-    <!-- <div class="form-group">
-        <label for="name" class="col-sm-3 control-label "> User name</label>
-        <div class="col-sm-4">
-            <input [(ngModel)]="newuser.username" type="text" class="form-control" id="user_name" placeholder="Input name">
-         </div>
-    </div>
-
-    <div class="form-group">
-        <label for="age" class="col-sm-3 control-label "> Password</label>
-        <div class="col-sm-4">
-            <input [(ngModel)]="newuser.password" type="password" class="form-control" id="pwd" placeholder="Input password">
-         </div>
-    </div>
-
-    <div class="form-group" >
-        <div class="col-sm-7 col-sm-offset-4">
-            <button  class="btn btn-primary" (click)="register()" >Register</button>
-        </div>
-    </div>
-
-</div> -->
-
-
 
 <div class="wrapper">
 	<div class="inner">
 		<img src="assets/images/image-1.png" alt="" class="image-1">
-		<form action="">
+		<form action="" #sign="ngForm">
 			<h3>New Account?</h3>
 			<div class="form-holder">
 				<span class="lnr lnr-user"></span>
-				<input [(ngModel)]="newuser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username">
+				<input [(ngModel)]="newuser.username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Username" name="username" required #username="ngModel" minlength="6">
+				<p *ngIf="username.touched && username.errors?.required">username is required</p>
+				<p *ngIf="username.touched && username.errors?.minlength">minlength {{username.errors?.minlength.requiredLength}}</p>
 			</div>
-			<div class="form-holder">
-				<span class="lnr lnr-phone-handset"></span>
-				<input type="text" class="form-control" placeholder="Phone Number">
-			</div>
+			
 			<div class="form-holder">
 				<span class="lnr lnr-envelope"></span>
-				<input [(ngModel)]="newuser.email" type="text" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Mail">
-
+				<input [(ngModel)]="newuser.email" type="text" class="form-control" placeholder="Mail" [ngModelOptions]="{standalone: true}" required #mail="ngModel" ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" >
+				<p *ngIf="mail.touched && mail.errors?.required">mail is required</p>
+				<p>EX:example@gmail.com</p>
 			</div>
 			<div class="form-holder">
 				<span class="lnr lnr-lock"></span>
-				<input [(ngModel)]="newuser.password" type="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Password">
+				<input [(ngModel)]="newuser.password" type="password" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Password" required #password="ngModel" ngModel pattern="[0-9]*" >
+				<p *ngIf="password.touched && password.errors?.required">password is required </p>
 			</div>
 			
 			<button (click)="register()">
 				<span>Register</span>
 			</button>
 		</form>
-		<img src="images/image-2.png" alt="" class="image-2">
+		<img src="assets/images/image-2.png" alt="" class="image-2">
 	</div>
 	
 </div>
@@ -81,117 +38,3 @@ Regiester
 
 
 
-<!-- body {
-    background:#333;
-}
-#login {
-	-webkit-perspective: 1000px;
-	-moz-perspective: 1000px;
-	perspective: 1000px;
-	margin-top:50px;
-	margin-left:30%;
-}
-.login {
-	font-family: 'Josefin Sans', sans-serif;
-	-webkit-transition: .3s;
-	-moz-transition: .3s;
-	transition: .3s;
-	-webkit-transform: rotateY(40deg);
-	-moz-transform: rotateY(40deg);
-	transform: rotateY(40deg);
-}
-.login:hover {
-	-webkit-transform: rotate(0);
-	-moz-transform: rotate(0);
-	transform: rotate(0);
-}
-.login article {
-	
-}
-.login .form-group {
-	margin-bottom:17px;
-}
-.login .form-control,
-.login .btn {
-	border-radius:0;
-}
-.login .btn {
-	text-transform:uppercase;
-	letter-spacing:3px;
-}
-.input-group-addon {
-	border-radius:0;
-	color:#fff;
-	background:#f3aa0c;
-	border:#f3aa0c;
-}
-.forgot {
-	font-size:16px;
-}
-.forgot a {
-	color:#333;
-}
-.forgot a:hover {
-	color:#5cb85c;
-}
-
-#inner-wrapper, #contact-us .contact-form, #contact-us .our-address {
-    color: #1d1d1d;
-    font-size: 19px;
-    line-height: 1.7em;
-    font-weight: 300;
-    padding: 50px;
-    background: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    margin-bottom: 100px;
-}
-.input-group-addon {
-    border-radius: 0;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-    color: #fff;
-    background: #f3aa0c;
-    border: #f3aa0c;
-        border-right-color: rgb(243, 170, 12);
-        border-right-style: none;
-        border-right-width: medium;
-} -->
-
-<!-- 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!------ Include the above in your HEAD tag ---------->
-
-<!-- <div class="col-md-4 col-md-offset-4" id="login">
-						<section id="inner-wrapper" class="login">
-							<article>
-								<form>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-user"> </i></span>
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-											<input type="email" class="form-control" placeholder="Email Address">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
-											<input type="password" class="form-control" placeholder="Password">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
-											<input type="password" class="form-control" placeholder="Confirm Password">
-										</div>
-									</div>
-									  <button type="submit" class="btn btn-success btn-block">Submit</button>
-								</form>
-							</article>
-						</section></div> -->

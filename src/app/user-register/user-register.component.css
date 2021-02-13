@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: "Muli-Regular";
     src: url("../fonts/muli/Muli-Regular.ttf"); }
@@ -194,4 +196,6 @@
       background: none; } }
   
   /*# sourceMappingURL=style.css.map */
-  
+  .ng-invalid{
+    border: 2px red solid;
+  }

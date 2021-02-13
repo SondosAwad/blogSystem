@@ -11,33 +11,33 @@ import { BlogService } from '../_services/blog.service';
 export class HomeComponent implements OnInit {
 
   blogs: Blog[] = [];
-  newblog:Blog=new Blog("","",0,new Date(),0,"",[]);
-  fd:FormData=new FormData();
-  constructor(private blogService: BlogService,private router:Router) { }
+  newblog: Blog = new Blog("", "", 0, new Date(), 0, "", []);
+  fd: FormData = new FormData();
+  constructor(private blogService: BlogService, private router: Router) { }
 
- 
 
-  onfileselected(event:any){
 
-    var selectedfile=event.target.files[0];
-    this.fd=new FormData();
-    
-    this.fd.append('imgURL',selectedfile,selectedfile.name);
+  onfileselected(event: any) {
+
+    var selectedfile = event.target.files[0];
+    this.fd = new FormData();
+
+    this.fd.append('imgURL', selectedfile, selectedfile.name);
     console.log(selectedfile);
   }
 
-  save(){
-        console.log(this.newblog.title);
+  save() {
+    console.log(this.newblog.title);
 
-        this.fd.append('title',this.newblog.title);
-        this.fd.append('content',this.newblog.content);
-       // this.fd.append('tags',this.newblog.tags);
-           
+    this.fd.append('title', this.newblog.title);
+    this.fd.append('content', this.newblog.content);
+    // this.fd.append('tags',this.newblog.tags);
+
     this.blogService.addblogimg(this.fd).subscribe(
-      a=>{
-        
+      a => {
+
         console.log(a);
-        
+
         this.router.navigateByUrl("/home");
       }
     )
@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
     this.blogService.getAll().subscribe(
       blogs => {
         console.log(blogs);
-        blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
         this.blogs = blogs;
       }
     );

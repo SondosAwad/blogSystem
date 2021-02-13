@@ -7,41 +7,40 @@ import { Blog } from '../_models/blog';
 })
 export class BlogService {
 
-  getAll(){
+  getAll() {
     return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com");
   }
 
-  getUserBlogs(){
+  getUserBlogs() {
     return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com/blogs");
   }
-  addblogimg(fd:FormData){
-    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",fd,{
-      reportProgress:true,
-      observe:'events'
-    });
-  }
-  addblog(blog:Blog){
-    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs",blog);
-  }
 
-  detailblog(id:number){
-    return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/"+id)
+  addblogimg(fd: FormData) {
+    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs", fd);
+
+  }
+  addblog(blog: Blog) {
+    return this.http.post<Blog>("https://yourcoolblogpost.herokuapp.com/blogs", blog);
   }
 
-
-
-
-
-
-
-
-  
-  deleteblog(id:number){
-    return this.http.delete("https://yourcoolblogpost.herokuapp.com/blogs/"+id);
+  detailblog(id: number) {
+    return this.http.get<Blog>("https://yourcoolblogpost.herokuapp.com/blogs/" + id)
   }
-  editblog(id:number,blog:Blog){
-    return this.http.patch("https://yourcoolblogpost.herokuapp.com/blogs/"+id,blog);
+
+
+
+  //search  
+  search(key: string) {
+    return this.http.get<Blog[]>("https://yourcoolblogpost.herokuapp.com/blogs/search/" + key);
   }
-  
+
+  deleteblog(id: number) {
+    return this.http.delete("https://yourcoolblogpost.herokuapp.com/blogs/" + id);
+
+  }
+  editblog(id: number, blog: Blog) {
+    return this.http.patch("https://yourcoolblogpost.herokuapp.com/blogs/" + id, blog);
+  }
+
   constructor(public http: HttpClient) { }
 }

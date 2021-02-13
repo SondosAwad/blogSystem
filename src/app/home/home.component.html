@@ -2,8 +2,8 @@
  <!-- <a routerLink="/blogs" class="btn btn-danger">Add blog</a> -->
  <div class="container">
   <div class="row" id="row_style">
- <div class="col-md-8 col-sm-12 pull-left posttimeline">
-  <div class="panel panel-default">
+ <div class="col-md-8 col-sm-12  posttimeline">
+  <div class="panel panel-default" class="ff">
     <div class="panel-body">
       <div class="status-upload nopaddingbtm">
         <form>
@@ -16,7 +16,7 @@
             <input class="glyphicon glyphicon-picture"  type="file" (change)="onfileselected($event)" data-original-title="Picture" [ngModelOptions]="{standalone: true}">
         
           </ul>
-          <button type="submit"  class="btn btn-success pull-right" (click)="save()"> Share</button>
+          <button type="submit"  class="btn btn-success " (click)="save()"> Share</button>
         </form>
       </div>
       <!-- Status Upload  --> 
@@ -58,50 +58,61 @@
 
 
 
+<!-- ------------------------------------- -->
 
 
 
-<section class="my-5">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+<div class="col-md-12 bootstrap snippets">
 
-    <!-- Section heading -->
- <div id="blogs" *ngFor = "let blog of blogs">
-    <!-- Grid row -->
-    <div class="row" >
-      <!-- Grid column -->
-      <div class="col-lg-3">
+<div class="panel">
+    <div *ngFor = "let blog of blogs"   class="panel-body">
   
-        <!-- Featured image -->
-        <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
-          <img class="img-fluid" src= "{{blog.imgURL}}" alt="Sample image">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
+    <div class="media-block pad-all">
+      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+      <div class="media-body">
+        <div class="mar-btm">
+          <a href="#" class="btn-link text-semibold media-heading box-inline">{{ blog.author.username}}</a>
+          <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From web   {{blog.postDate |date:'MMM dd, YYYY'}}</p>
         </div>
-       <!-- // "https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" -->
+
+        <p >{{blog.title}}</p>
+        <img class="img-responsive thumbnail" src= "{{blog.imgURL}}" alt="Image">
+        <p >{{blog.content}}</p>
+        <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
+
+
+        <div class="pad-ver">
+          <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+          <div class="btn-group">
+            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+          </div>
+          <a class="btn btn-sm btn-default btn-hover-primary" [routerLink]="['/blogs/detail/',blog._id]">Comment</a>
+        </div>
+        <hr>
+
+
       </div>
-      <!-- Grid column -->
-  
-      <!-- Grid column -->
-      <div class="col-lg-3">
-  
-        <!-- Post title -->
-        <h3 class="font-weight-bold mb-3"><strong>{{ blog.title}}</strong></h3>
-        <!-- Excerpt -->
-        <p>{{blog.content}} </p>
-        <!-- Post data -->
-        <p>by <a><strong>{{ blog.author.username}}</strong></a>, {{ blog.postDate | date:'MMMM dd, YYYY'}}</p>
-        <!-- Read more button  -->
-         <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
-       
-      </div>
-      <!-- Grid column -->
-  
     </div>
-    <!-- Grid row -->
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+  </div>
 </div>
-  </section>
-  <!-- Section: Blog v.1 -->
-  
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
