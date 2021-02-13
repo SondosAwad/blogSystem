@@ -44,28 +44,60 @@
         </div>
     
             <!-- search -->
-            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+            <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
             <form action="/hms/accommodations" method="GET"> 
               <div class="row">
                 <div class="col-xs-6 col-md-4">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
-                    <div class="input-group-btn">
+                    <div class="input-group-btn"> -->
                         <!-- search by id -->
-                      <button  routerLink ="/users/id" class="btn btn-primary" type="submit">
+                      <!-- <button  routerLink ="/users/id" class="btn btn-primary" type="submit">
                         <span  class="glyphicon glyphicon-search"></span>
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
+            </form> -->
             <!-- end of search box -->
+
+
+
+ <!-- settings -->
+
+ <!-- <div class="list-group">  
+    <a routerLink ='/users/editprofile' class="list-group-item">
+      <i  class="fa fa-asterisk"></i> Edit Profile
+      <i class="fa fa-chevron-right list-group-chevron"></i>
+    </a> 
+    <button (click)='deactivate()'class="list-group-item">  Deactivate my account</button>
+    <button (click)='logout()'class="list-group-item">  Logout</button>
+</div>  -->
+<!-- /.list-group -->
+
+
+
+<!-- end of settings -->
+
+
         <div class="profile-container">
             <div class="profile-sidebar">
                 <div class="desktop-sticky-top">
                     <h4>{{username}}</h4>
                     <div class="font-weight-600 mb-3 text-muted mt-n2">@{{username}}</div>
+                    
+                    <div class="list-group">  
+                      <a routerLink ='/users/editprofile' class="list-group-item">
+                        <i  class="fa fa-asterisk"></i> Edit Profile
+                        <i class="fa fa-chevron-right list-group-chevron"></i>
+                      </a> 
+                      <button (click)='deactivate()'class="list-group-item">  Deactivate my account</button>
+
+                        <!-- <i class="fa fa-chevron-right list-group-chevron"></i>
+                        -->
+                      <button (click)='logout()'class="list-group-item">  Logout</button>
+                    </div> <!-- /.list-group -->
                     <p>
                         Principal UXUI Design &amp; Brand Architecture for Studio. Creator of SeanTheme. Bringing the world closer together. Studied Computer Science and Psychology at Harvard University.
                     </p>
