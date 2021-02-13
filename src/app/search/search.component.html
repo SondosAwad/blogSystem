@@ -1,0 +1,79 @@
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container profile-page">
+    <div class="row">
+        <div class="col-xl-6 col-lg-7 col-md-12">
+            <div class="card profile-header">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="profile-image float-md-right"> <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""> </div>
+                        </div>
+                        <div *ngFor="let items of users"  class="col-lg-8 col-md-8 col-12">
+                            <h4 class="m-t-0 m-b-0"><strong>{{items.username}}</strong></h4>
+                            <span class="job_post">Ui UX Designer</span>
+                            <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
+                            <div>
+                                <button class="btn btn-primary btn-round">Follow</button>
+                                <button class="btn btn-primary btn-round btn-simple">Message</button>
+                            </div>
+                            <p class="social-icon m-t-5 m-b-0">
+                                <a title="Twitter" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+                                <a title="Facebook" href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
+                                <a title="Google-plus" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+                                <a title="Behance" href="javascript:void(0);"><i class="fa fa-behance"></i></a>
+                                <a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram "></i></a>
+                            </p>
+                        </div>                
+                    </div>
+                </div>                    
+            </div>
+        </div> -->
+        
+      
+
+
+
+
+
+<!-- ------------------------------------- -->
+
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+<div class="col-md-12 bootstrap snippets">
+
+<div class="panel">
+    <div *ngFor="let items of blogs"   class="panel-body">
+  
+    <div class="media-block pad-all">
+      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+      <div class="media-body">
+        <div class="mar-btm">
+          <a href="#" class="btn-link text-semibold media-heading box-inline">{{items.author.username}}</a>
+          <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From web   {{items.postDate |date:'MMM dd, YYYY'}}</p>
+        </div>
+        <p >{{items.title}}</p>
+        <img class="img-responsive thumbnail" [src]="['https://yourcoolblogpost.herokuapp.com/'+items.imgURL]" alt="Image">
+        <p >{{items.content}}</p>
+
+        <div class="pad-ver">
+          <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+          <div class="btn-group">
+            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+          </div>
+          <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+        </div>
+        <hr>
+
+      </div>
+    </div>
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+  </div>
+</div>
+</div>
+</div>
+
+

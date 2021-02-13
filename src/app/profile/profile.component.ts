@@ -66,7 +66,11 @@ export class ProfileComponent implements OnInit {
     this.blogService.getUserBlogs().subscribe(
       blogs => {
         console.log(blogs);
+<<<<<<< Updated upstream
         blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/"+blog.imgURL);
+=======
+        // blogs.forEach(blog => blog.imgURL = "https://yourcoolblogpost.herokuapp.com/images/" + blog.imgURL);
+>>>>>>> Stashed changes
         this.blogs = blogs;
       }
     );

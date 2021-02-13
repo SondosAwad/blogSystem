@@ -23,10 +23,27 @@ export class UserService {
   profile(username: String) {
     return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/profile" + username);
   }
+<<<<<<< Updated upstream
   //search by id 
   searchbyid(id: number) {
     return this.http.get<User>("https://yourcoolblogpost.herokuapp.com/users/id" + id);
+=======
+
+  //edit profile 
+  editprofile(user: User) {
+    return this.http.patch<User>("https://yourcoolblogpost.herokuapp.com/users", user);
   }
+
+
+  //search  
+  search(key: string) {
+    return this.http.get<User[]>("https://yourcoolblogpost.herokuapp.com/user/search/" + key);
+
+>>>>>>> Stashed changes
+  }
+
+
+
   //follow
   follow(id: number,user: User) {
     return this.http.patch("https://yourcoolblogpost.herokuapp.com/users/follow" + id,user);

@@ -1,14 +1,16 @@
-img{
-    margin-left: 20%;
-    margin-top: 10%;
-       width: 80%;
-       height: 80%;
+img {
+  /* margin-left: 20%;
+  margin-top: 10%; */
+  width: 50%;
+  height: 400px;
+
 
 }
 
+/*
 #row_style {
-    margin-top: 30px;
-   
+  margin-top: 30px;
+
 }
 div.panel-body{
     background-color:beige ;
@@ -18,7 +20,37 @@ input{
     border-top: 0%;
 }
 #submit {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
+} */
+
+
+
+body {
+  margin-top: 20px;
+  background: #ebeef0;
 }
 
+.img-sm {
+  width: 46px;
+  height: 46px;
+}
+
+.panel {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.075);
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 15px;
+}
+
+.panel .panel-footer,
+.panel>:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.panel .panel-heading,
+.panel>:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

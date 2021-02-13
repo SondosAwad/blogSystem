@@ -16,26 +16,49 @@
       <li routerLinkActive="active"><a routerLink="/myblogs">My Blogs</a></li>
       <!-- profile -->
       <li routerLinkActive="active"><a routerLink="/users/profile">Profile</a></li>
-
-
     </ul>
-    
+    <!-- search -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <form action="/hms/accommodations" method="GET"> 
       <div class="row">
         <div class="col-xs-6 col-md-4">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
+            <input #key type="text" class="form-control" placeholder="Search" id="txtSearch"/>
             <div class="input-group-btn">
-                <!-- search by id -->
-              <button  routerLink ="/users/id" class="btn btn-primary" type="submit">
+               
+              <a click="gosearch()" [routerLink]="['/search/'+key.value]"  class="btn btn-primary" type="submit">
                 <span  class="glyphicon glyphicon-search"></span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </form>
+
+    <!-- routerLink="/search" -->
+    
+    
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <ul class="nav navbar-nav navbar-right">
       <li routerLinkActive="active"><a routerLink="/users/login">Login</a></li>
       <li routerLinkActive="active"><a routerLink="/users/register">Register</a></li>

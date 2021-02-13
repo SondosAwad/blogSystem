@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+import { SearchComponent } from './search/search.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+>>>>>>> Stashed changes
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -28,7 +33,8 @@ const routes: Routes = [
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
 
-
+  //search
+  { path: 'search/:key', component: SearchComponent },
 
   { path: 'blogs', component: AddPostComponent },
   { path: 'blogs/detail/:id', component: DetailblogComponent },
