@@ -18,7 +18,6 @@ import { FollowProfileComponent } from './follow-profile/follow-profile.componen
 
 import { AddPostComponent } from './add-post/add-post.component';
 import { DetailblogComponent } from './detailblog/detailblog.component';
-import { EditprofileComponent } from './editprofile/editprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +33,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 
 
     AddPostComponent,
-    DetailblogComponent,
-    EditprofileComponent,
+    DetailblogComponent
   ],
   imports: [
     BrowserModule,
