@@ -1,6 +1,6 @@
 <section class="my-5" style="margin-top: 20px;">
 
-    <div id="users" *ngFor = "let user of logged.followers">
+    <div id="users" *ngFor = "let user of logged.following">
        
        <div class="row" >
                 <div class="media user-follower media-block">
@@ -8,7 +8,7 @@
                    <div class="media-body">
                        <a href="#">{{ user.username }}<br><span class="text-muted username">@{{ user.username }}</span></a>
                        <!-- <button type="button" class="btn btn-sm btn-toggle-following pull-right" (click)="follow(user)" [ngClass]="{'green' : toggle, 'red': !toggle}"><i class="fa fa-checkmark-round"></i> <span>Follow</span></button> -->
-                       <mat-button-toggle #togglebtn class="btn" (click)="toggelFollow(user, togglebtn.checked)" [ngClass]="{'green' : !togglebtn.checked, 'red': togglebtn.checked}">{{ togglebtn.checked ? 'Unfollow' : 'Follow' }}</mat-button-toggle>
+                       <mat-button-toggle #togglebtn class="btn" (click)="toggelFollow(user, togglebtn.checked)" [ngClass]="{'green' : togglebtn.checked, 'red': !togglebtn.checked}">{{ togglebtn.checked ? 'Follow' : 'Unfollow' }}</mat-button-toggle>
                        <!-- {{togglebtn.checked}} -->
                     </div>
                </div>

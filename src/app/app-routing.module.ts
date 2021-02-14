@@ -17,6 +17,7 @@ import { FollowProfileComponent } from './follow-profile/follow-profile.componen
 import { AddPostComponent } from './add-post/add-post.component';
 import { DetailblogComponent } from './detailblog/detailblog.component';
 import { ExploreComponent } from './explore/explore.component';
+import { FollowingComponent } from './following/following.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,9 @@ const routes: Routes = [
   //edit profile
   { path: 'users/editprofile', component: EditprofileComponent },
   //follow
-  { path: 'users/follow', component: FollowComponent },
+  { path: 'users/followers', component: FollowComponent },
+  { path: 'users/following', component: FollowingComponent },
+
   //search by id 
   { path: 'users/id', component: FollowProfileComponent },
   //search

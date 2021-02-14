@@ -4,17 +4,16 @@ import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 
 @Component({
-  selector: 'app-follow',
-  templateUrl: './follow.component.html',
-  styleUrls: ['./follow.component.css']
+  selector: 'app-following',
+  templateUrl: './following.component.html',
+  styleUrls: ['./following.component.css']
 })
-export class FollowComponent implements OnInit {
-    
+export class FollowingComponent implements OnInit {
+
     users: User[] = [];
     logged: User = JSON.parse(localStorage.getItem("user"));
 
-    constructor(private userService:UserService,private router:Router) { }
-   
+    constructor(private userService: UserService, private router: Router) { }
   
     toggelFollow(user: User, toggleBtnState: boolean) {
 
@@ -38,8 +37,10 @@ export class FollowComponent implements OnInit {
       }
     }
 
+
       ngOnInit(): void {
         this.logged = JSON.parse(localStorage.getItem("user"));
+        console.log(this.logged)
         this.userService.getusers().subscribe(
           users => {
             console.log(users);
@@ -49,6 +50,5 @@ export class FollowComponent implements OnInit {
         );
     
       }
-
 
 }

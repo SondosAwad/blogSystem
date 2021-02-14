@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
 
   username: String = new String();
   user: User = new User();
-  blogs!: Blog[];
+  blogs: Blog[] =[];
   blogtemp!: Blog;
   constructor(private userService: UserService, private blogService: BlogService, private router: Router) { }
 

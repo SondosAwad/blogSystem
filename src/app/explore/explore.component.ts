@@ -11,27 +11,24 @@ import { UserService } from '../_services/user.service';
 export class ExploreComponent implements OnInit {
 
   users: User[] = [];
-  constructor(private userService: UserService, private router: Router) { }
+  loggedUser: User = JSON.parse(localStorage.getItem("user"));
 
-  status = 'Follow';
+  constructor(private userService: UserService, private router: Router) { }
 
   toggelFollow(user: User, toggleBtnState: boolean) {
 
     console.log(toggleBtnState);
-    
-    this.status = toggleBtnState ? 'Unfollow' : 'Follow';
-
     console.log(user);
-
+    
     //follow function takes the id of the user to follow and the logged user
     if(toggleBtnState){
-      this.userService.follow(user._id, JSON.parse(localStorage.getItem(user))).subscribe(
+      this.userService.follow(user._id, this.loggedUser).subscribe(
         followedUser => {
           console.log(followedUser);
         }
       );
     }else{
-      this.userService.unFollow(user._id, JSON.parse(localStorage.getItem(user))).subscribe(
+      this.userService.unFollow(user._id, this.loggedUser).subscribe(
         unFollowedUser => {
           console.log(unFollowedUser);
         }
@@ -44,8 +41,16 @@ export class ExploreComponent implements OnInit {
     this.userService.getusers().subscribe(
       users => {
         console.log(users);
-
-        this.users = users;
+        let result:User[] = [];
+        result = users.filter(user => user._id != this.loggedUser._id)
+        if(this.loggedUser.following.length){
+          for(let i=0; i < this.loggedUser.following.length; i++){
+            console.log(this.loggedUser.following[i]._id)
+            result = result.filter(user => user._id != this.loggedUser.following[i]._id)
+          }
+        }
+        console.log(result)
+        this.users = result;
       }
     );
 

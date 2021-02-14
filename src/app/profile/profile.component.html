@@ -14,15 +14,15 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a routerLink ="/users/follow" class="nav-link " data-toggle="tab">
+                    <a href="#profile-media" class="nav-link" data-toggle="tab">
+                        <div class="nav-field">Photos</div>
+                        <div class="nav-value">{{ blogs.length }}</div>
+                    </a>
+                </li>
+                  <li class="nav-item">
+                      <a routerLink ="/users/followers" class="nav-link " data-toggle="tab">
                           <div class="nav-field">Followers</div>
                           <div  class="nav-value">{{ user.followers.length }}</div>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#profile-media" class="nav-link" data-toggle="tab">
-                          <div class="nav-field">Photos</div>
-                          <div class="nav-value">{{ blogs.length }}</div>
                       </a>
                   </li>
                   <!-- <li class="nav-item">
@@ -32,7 +32,7 @@
                       </a>
                   </li> -->
                   <li class="nav-item">
-                      <a href="#profile-followers" class="nav-link" data-toggle="tab">
+                      <a routerLink ="/users/following" class="nav-link" data-toggle="tab">
                           <div class="nav-field">Following</div>
                           <div class="nav-value">{{ user.following.length }}</div>
                       </a>

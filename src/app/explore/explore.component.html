@@ -1,16 +1,16 @@
 
-<section class="my-5">
+<section class="my-5" style="margin-top: 20px;">
 
     <div id="users" *ngFor = "let user of users">
        
        <div class="row" >
-                <div class="media user-follower">
+                <div class="media user-follower media-block">
                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User Avatar" class="media-object pull-left">
                    <div class="media-body">
                        <a href="#">{{ user.username }}<br><span class="text-muted username">@{{ user.username }}</span></a>
                        <!-- <button type="button" class="btn btn-sm btn-toggle-following pull-right" (click)="follow(user)" [ngClass]="{'green' : toggle, 'red': !toggle}"><i class="fa fa-checkmark-round"></i> <span>Follow</span></button> -->
-                       <mat-button-toggle #togglebtn class="btn pull-right" (click)="toggelFollow(user, togglebtn.checked)" [ngClass]="{'green' : !togglebtn.checked, 'red': togglebtn.checked}">{{ status }}</mat-button-toggle>
-                       {{togglebtn.checked}}
+                       <mat-button-toggle #togglebtn class="btn" (click)="toggelFollow(user, togglebtn.checked)" [ngClass]="{'green' : !togglebtn.checked, 'red': togglebtn.checked}" [ngValue]='status'>{{ togglebtn.checked ? 'Unfollow' : 'Follow' }}</mat-button-toggle>
+                       <!-- {{togglebtn.checked}} -->
                     </div>
                </div>
        </div>
