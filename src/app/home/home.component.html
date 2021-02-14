@@ -4,7 +4,7 @@
   <div class="row" id="row_style">
  <div class="col-md-8 col-sm-12  posttimeline">
   <div class="panel panel-default" class="ff">
-    <div class="panel-body">
+    <div class="panel-body media-block" style="margin-top: 20px;">
       <div class="status-upload nopaddingbtm">
         <form>
           <div class="form-group">
@@ -13,10 +13,11 @@
           <textarea [(ngModel)]="newblog.content" class="form-control" placeholder="What are you doing right now?" [ngModelOptions]="{standalone: true}"></textarea>
           <br>
           <ul class="nav nav-pills pull-left ">
-            <input class="glyphicon glyphicon-picture"  type="file" (change)="onfileselected($event)" data-original-title="Picture" [ngModelOptions]="{standalone: true}">
+            <span class="glyphicon glyphicon-picture"></span>
+            <input id="inputImage" type="file" (change)="onfileselected($event)" data-original-title="Picture" [ngModelOptions]="{standalone: true}">
         
           </ul>
-          <button type="submit"  class="btn btn-success " (click)="save()"> Share</button>
+          <button type="submit"  class="btn btn-primary pull-right" (click)="save()"> Share</button>
         </form>
       </div>
       <!-- Status Upload  --> 
@@ -70,13 +71,14 @@
     <div *ngFor = "let blog of blogs"   class="panel-body">
   
     <div class="media-block pad-all">
-      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar7.png"></a>
       <div class="media-body">
         <div class="mar-btm">
-          <a href="#" class="btn-link text-semibold media-heading box-inline">{{ blog.author.username}}</a>
+          <a href="#" class="btn-link text-semibold media-heading box-inline">@{{ blog.author.username}}</a>
           <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From web   {{blog.postDate |date:'MMM dd, YYYY'}}</p>
         </div>
 
+        <hr>
         <p >{{blog.title}}</p>
         <img class="img-responsive thumbnail" src= "{{blog.imgURL}}" alt="Image">
         <p >{{blog.content}}</p>
@@ -92,9 +94,10 @@
           <a class="btn btn-sm btn-default btn-hover-primary" [routerLink]="['/blogs/detail/',blog._id]">Comment</a>
         </div>
         <hr>
-
+        <br/><br/>
 
       </div>
+      
     </div>
     <!--===================================================-->
     <!-- End Newsfeed Content -->

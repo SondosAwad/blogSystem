@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './_services/user.service';
+import { User } from './../_models/user';
+import { User } from './_models/user';
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +12,11 @@ import { UserService } from './_services/user.service';
 })
 export class AppComponent {
   title = 'blogSystem';
+  loggeduser: User;
 
-  constructor(public userService: UserService, public router:Router) { }
+  constructor(public userService: UserService, public router:Router) { 
+    this.loggeduser = JSON.parse(localStorage.getItem("user"));
+  }
 
   loggedIn(){
     return !!localStorage.getItem('token');

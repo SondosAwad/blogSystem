@@ -43,7 +43,8 @@
       <li routerLinkActive="active" *ngIf="!loggedIn()"><a routerLink="/users/login">Login</a></li>
       <li routerLinkActive="active" *ngIf="!loggedIn()" style="margin-right: 5px;"><a routerLink="/users/register">Register</a></li>
       <li routerLinkActive="active" *ngIf="loggedIn()" style="margin-right: 5px;"><a routerLink="/users/login" (click)="logout()">Log out</a></li>
-        <!-- <li class="dropdown">
+      <li routerLinkActive="active" *ngIf="loggedIn()" style="margin-right: 5px;"><a routerLink="/users/profile">@{{ loggeduser.username }}</a></li> 
+      <!-- <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">Action</a></li>
@@ -59,4 +60,5 @@
 <router-outlet>
 
 </router-outlet>
+<br/><br/><br/><br/><br/><br/>
 </div>

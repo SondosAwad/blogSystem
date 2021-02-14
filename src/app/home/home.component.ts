@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
         this.router.navigateByUrl("/home");
       }
     )
+    alert("Posted Succesfully!")
   }
 
 

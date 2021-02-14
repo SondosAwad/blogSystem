@@ -14,6 +14,7 @@ import { BlogService } from '../_services/blog.service';
 export class ProfileComponent implements OnInit {
 
   username: String = new String();
+  user: User = new User();
   blogs!: Blog[];
   blogtemp!: Blog;
   constructor(private userService: UserService, private blogService: BlogService, private router: Router) { }
@@ -81,6 +82,8 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem("user"));
+    console.log(this.user)
     this.getName();
     this.blogService.getUserBlogs().subscribe(
       blogs => {

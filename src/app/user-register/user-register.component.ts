@@ -17,7 +17,7 @@ export class UserRegisterComponent implements OnInit {
     console.log(this.newuser);
     this.userService.regist(this.newuser).subscribe(
       a =>
-        this.router.navigate(['/home']) //concatinate elments 
+        this.router.navigate(['/users/login']) //concatinate elments 
     )
   }
   ngOnInit(): void {
