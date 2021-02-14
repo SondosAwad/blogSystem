@@ -27,12 +27,14 @@ export class FollowComponent implements OnInit {
         this.userService.follow(user._id, JSON.parse(localStorage.getItem("user"))).subscribe(
           followedUser => {
             console.log(followedUser);
+            localStorage.setItem("user", JSON.stringify(followedUser));
           }
         );
       }else{
         this.userService.unFollow(user._id, JSON.parse(localStorage.getItem("user"))).subscribe(
           unFollowedUser => {
             console.log(unFollowedUser);
+            localStorage.setItem("user", JSON.stringify(unFollowedUser));
           }
         );
       }

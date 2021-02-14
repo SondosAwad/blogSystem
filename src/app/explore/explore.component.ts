@@ -25,12 +25,14 @@ export class ExploreComponent implements OnInit {
       this.userService.follow(user._id, this.loggedUser).subscribe(
         followedUser => {
           console.log(followedUser);
+          localStorage.setItem("user", JSON.stringify(followedUser));
         }
       );
     }else{
       this.userService.unFollow(user._id, this.loggedUser).subscribe(
         unFollowedUser => {
           console.log(unFollowedUser);
+          localStorage.setItem("user", JSON.stringify(unFollowedUser));
         }
       );
     }
