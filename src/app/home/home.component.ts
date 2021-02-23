@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
 
         console.log(a);
 
-        this.router.navigateByUrl("/home");
+        this.router.navigateByUrl("/explore");
       }
     )
     alert("Posted Succesfully!")

@@ -11,7 +11,7 @@
                        <mat-button-toggle #togglebtn class="btn" *ngIf = !user.status (click)="toggelFollow(user, togglebtn.checked)" [ngClass]="{'green' : !togglebtn.checked, 'red': togglebtn.checked}">{{ togglebtn.checked ? 'Unfollow' : 'Follow' }}</mat-button-toggle>
                        <mat-button-toggle #togglebtn class="btn" *ngIf = user.status (click)="toggelUnFollow(user, togglebtn.checked)" [ngClass]="{'green' : togglebtn.checked, 'red': !togglebtn.checked}">{{ togglebtn.checked ? 'Follow' : 'Unfollow' }}</mat-button-toggle>
                        <!-- {{togglebtn.checked}} -->
-                       <p>{{user.status}}</p>
+                       <!-- <p>{{user.status}}</p> -->
                     </div>
                </div>
        </div>

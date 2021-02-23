@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'suggestions', component: ExploreComponent},
   { path: 'blogs', component: AddPostComponent },
   { path: 'blogs/detail/:id', component: DetailblogComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/explore', pathMatch: 'full' },
   { path: 'myblogs', component: UserBlogsComponent },
   { path: '**', component: NotfoundComponent }
 

@@ -28,7 +28,7 @@ export class DetailblogComponent implements OnInit {
           a => {
             console.log(a);
             console.log(this.comm.content);
-            this.r.navigateByUrl("/home");
+            this.r.navigateByUrl("/explore");
           }
         )
       }
