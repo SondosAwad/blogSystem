@@ -3,9 +3,10 @@ export class User {
         public username?: String,
         public password?: String,
         public email?:String,
-          public blogs?: number,
-         public following?: number[],
-          public followers?: number[]
+        public blogs?: number,
+        public following?: User[],
+        public followers?: User[],
+        public status?: Boolean
     ) { }
 
 }

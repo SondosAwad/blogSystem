@@ -23,17 +23,17 @@ export class FollowingComponent implements OnInit {
   
       //follow function takes the id of the user to follow and the logged user
       if(toggleBtnState){
-        this.userService.follow(user._id, JSON.parse(localStorage.getItem("user"))).subscribe(
-          followedUser => {
-            console.log(followedUser);
-            localStorage.setItem("user", JSON.stringify(followedUser));
-          }
-        );
-      }else{
         this.userService.unFollow(user._id, JSON.parse(localStorage.getItem("user"))).subscribe(
           unFollowedUser => {
             console.log(unFollowedUser);
             localStorage.setItem("user", JSON.stringify(unFollowedUser));
+          }
+        );
+      }else{
+        this.userService.follow(user._id, JSON.parse(localStorage.getItem("user"))).subscribe(
+          followedUser => {
+            console.log(followedUser);
+            localStorage.setItem("user", JSON.stringify(followedUser));
           }
         );
       }
