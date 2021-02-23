@@ -1,0 +1,92 @@
+
+ <!-- <a routerLink="/blogs" class="btn btn-danger">Add blog</a> -->
+ <!-- <div class="container">
+    <div class="row" id="row_style">
+   <div class="col-md-8 col-sm-12  posttimeline">
+    <div class="panel panel-default" class="ff">
+      <div class="panel-body media-block" style="margin-top: 20px;">
+        <div class="status-upload nopaddingbtm">
+          <form>
+            <div class="form-group">
+              <input [(ngModel)]="newblog.title" type="text" class="form-control" placeholder="Title" [ngModelOptions]="{standalone: true}">
+          </div>
+            <textarea [(ngModel)]="newblog.content" class="form-control" placeholder="What are you doing right now?" [ngModelOptions]="{standalone: true}"></textarea>
+            <br>
+            <ul class="nav nav-pills pull-left ">
+              <span class="glyphicon glyphicon-picture"></span>
+              <input id="inputImage" type="file" (change)="onfileselected($event)" data-original-title="Picture" [ngModelOptions]="{standalone: true}">
+          
+            </ul>
+            <button type="submit"  class="btn btn-primary pull-right" (click)="save()"> Share</button>
+          </form>
+        </div> -->
+        <!-- Status Upload  --> 
+      <!-- </div>
+    </div>
+   </div>
+  </div>
+  </div> -->
+  <!-- ------------------------------------- -->
+  
+  
+  
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container bootdey">
+  <div class="col-md-12 bootstrap snippets">
+  
+  <div class="panel">
+      <div *ngFor = "let blog of blogs"   class="panel-body">
+    
+      <div class="media-block pad-all">
+        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar7.png"></a>
+        <div class="media-body">
+          <div class="mar-btm">
+            <a href="#" class="btn-link text-semibold media-heading box-inline">@{{ blog.author.username}}</a>
+            <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From web   {{blog.postDate |date:'MMM dd, YYYY'}}</p>
+          </div>
+  
+          <hr>
+          <h3>{{blog.title}}</h3>
+          <div class="view overlay rounded z-depth-3 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+            <img class="img-responsive thumbnail" src= "{{blog.imgURL}}" alt="Image">
+          </div>
+          <p >{{blog.content}}</p>
+          <a  [routerLink]="['/blogs/detail/',blog._id]" mdbBtn color="success" mdbWavesEffect>Read more</a>
+  
+  
+          <div class="pad-ver">
+            <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+            <div class="btn-group">
+              <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+              <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+            </div>
+            <a class="btn btn-sm btn-default btn-hover-primary" [routerLink]="['/blogs/detail/',blog._id]">Comment</a>
+          </div>
+          <hr>
+          <br/><br/>
+  
+        </div>
+        
+      </div>
+      <!--===================================================-->
+      <!-- End Newsfeed Content -->
+    </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

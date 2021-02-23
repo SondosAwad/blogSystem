@@ -26,6 +26,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 
 import { ExploreComponent } from './explore/explore.component';
 import { FollowingComponent } from './following/following.component';
+import { TimelineComponent } from './timeline/timeline.component';
 // import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { FollowingComponent } from './following/following.component';
     EditprofileComponent,
     ExploreComponent,
     FollowingComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,

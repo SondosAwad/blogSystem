@@ -17,8 +17,9 @@
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-      <li routerLinkActive="active" *ngIf="loggedIn()"><a routerLink="/explore">Explore</a></li>
+      <li routerLinkActive="active" *ngIf="loggedIn()"><a routerLink="/timeline">Timeline</a></li>
+      <li routerLinkActive="active"><a routerLink="/explore">Explore</a></li>
+      <li routerLinkActive="active" *ngIf="loggedIn()"><a routerLink="/suggestions">Suggestions</a></li>
       <!-- profile -->
       <li routerLinkActive="active" *ngIf="loggedIn()"><a routerLink="/users/profile">Profile</a></li>
     </ul>

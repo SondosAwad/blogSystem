@@ -18,11 +18,12 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { DetailblogComponent } from './detailblog/detailblog.component';
 import { ExploreComponent } from './explore/explore.component';
 import { FollowingComponent } from './following/following.component';
-
+import { TimelineComponent } from './timeline/timeline.component';
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent },
+  { path: 'explore', component: HomeComponent },
+  { path: 'timeline', component: TimelineComponent },
   //user
   { path: 'users/register', component: UserRegisterComponent },
   { path: 'users/login', component: LoginComponent },
@@ -38,7 +39,7 @@ const routes: Routes = [
   { path: 'users/id', component: FollowProfileComponent },
   //search
   { path: 'search/:key', component: SearchComponent },
-  { path: 'explore', component: ExploreComponent},
+  { path: 'suggestions', component: ExploreComponent},
   { path: 'blogs', component: AddPostComponent },
   { path: 'blogs/detail/:id', component: DetailblogComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
